@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>Опросник</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/css/survey.css"/>
+  <link rel="icon" type="image/x-icon" href="/css/images/favicon.ico">
+
+  <!--<style>-->
+  <!--body{background-color}-->
+  <!--</style>-->
+</head>
+<body cz-shortcut-listen="true">
+<div class="box" >
+  <div class="header">
+    <h2>Анкета</h2>
+  </div>
+  <form method="POST" th:action="@{/survey}" th:object="${surveyRequest}" class="form-group">
+    <br>
+
+    <div class="form-check">
+      <label>1. Ваше желаемое профильное направления обучения:</label>
+      <br>
+      <select th:field="*{surveyPath}" id="surveyPath" name="surveyPath">
+        <option th:value="physmat">физико-математический</option>
+        <option th:value="chembio">химико-биологический</option>
+        <option th:value="it">информационно-технологический</option>
+        <option th:value="soc">социально-экономический</option>
+        <option th:value="hum">гуманитарный</option>
+        <option th:value="ling">лингвистический</option>
+        <option th:value="art">художественно-эстетический</option>
+      </select>
+    </div>
+
+    <br>
+    <div class="form-check">
+      <label>2. Фактор влияния на выбор профильного направления:</label>
+      <textarea class="form-control" th:field="*{surveyFactor}" id="surveyFactor" rows="3"></textarea>
+    </div>
+    <br>
+    <div class="form-check">
+      <label>3. Желаемые профильные предметы:</label>
+      <textarea class="form-control" th:field="*{surveySubject}" id="surveySubject" rows="3"></textarea>
+    </div>
+    <br>
+    <div class="form-check">
+      <label>4. Желаемая страна и язык для продолжения обучения:</label>
+      <textarea class="form-control" th:field="*{surveyCountry}" id="surveyCountry" rows="3"></textarea>
+    </div>
+    <br>
+    <div class="form-check">
+      <label>5. Претендуете ли вы на грант:</label>
+      <textarea class="form-control" th:field="*{surveyScholar}" id="surveyScholar" rows="3"></textarea>
+    </div>
+    <br>
+    <div class="form-check">
+      <label>6. Ваш способ подготовки к ЕНТ:</label>
+      <textarea class="form-control" th:field="*{surveyENT}" id="surveyENT" rows="3"></textarea>
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Приступить к тесту</button>
+  </form>
+
+</div>
+
+</body>
+</html>

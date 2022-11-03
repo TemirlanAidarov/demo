@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Опросник</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/instructions1.css"/>
+    <link rel="icon" type="image/x-icon" href="/css/images/favicon.ico">
+
+    <!--<style>-->
+    <!--body{background-color}-->
+    <!--</style>-->
+</head>
+<body cz-shortcut-listen="true">
+<div class="box" >
+    <div class="header">
+        <h2>Инструкции #1</h2>
+    </div>
+    <p><strong>Для достижения наилучших результатов внимательно прочитайте следующие инструкции!</strong>
+        <br>
+        Тест будет состоять из двух частей:
+        <br>
+        1. Анкетирование
+        <br>
+        Анкета состоит из 6 вопросов, на которые учащиеся могут свободно писать <br> любые свои мысли без каких-либо ограничений.
+        <br>     Длительность: ~15 минут
+        <br>
+
+        2. Тестирование
+        <br>
+        Вторая половина - это тест, в котором учащимся нужно было сделать выбор <br> из предложенных вариантов. В целом тестирование состоит из 120 вопросов.
+        <br>     Длительность: ~35 минут</p>
+    <button id="myButton" class="btn btn-lg btn btn-success btn-block" >Начать!</button>
+</div>
+
+</div>
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "/survey";
+    };
+</script>
+</body>
+</html>

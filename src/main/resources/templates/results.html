@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerGuide.kz</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link rel="icon" type="image/x-icon" href="/css/images/favicon.ico">
+
+</head>
+<body>
+<header>
+    <a href="home" class="logo">CareerGuide.kz</a>
+    <div class="group">
+        <ul class="navigation">
+            <li><a href="home">Главная страница</a></li>
+            <li><a href="about">О нас</a></li>
+            <li><a href="myAccount">Мой аккаунт</a></li>
+            <li><a href="logout">Выйти</a></li>
+        </ul>
+        <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
+    </div>
+</header>
+<div class = "box">
+    <div class = "titleOfresult">
+        <h2>Ваши результаты</h2>
+        <div class="resultsDesign">
+            <div class="ImagePart">
+                <img class="illustration1" src="/css/images/happy.svg">
+            </div>
+            <div>
+                <tr th:each="answersResult:${answersResults}" class="table">
+                    <td th:text="Напрваление: Химия-биология"></td>
+                    <td th:text="Шкала лидерства: Высокий уровень"></td>
+                    <td th:text="Социальный интеллект: Средний уровень"></td>
+                    <td th:text="Организованность: Средний уровень"></td>
+                    <td th:text="Логика: Средний уровень"></td>
+                    <td th:text="Креативность: Низкий уровень"></td>
+                    <td th:text="Шкалы мотивации: Мотивация достижения успеха"></td>
+                </tr>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th> Title </th>
+        <th> Author </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${books.empty}">
+        <td colspan="2"> No Books Available </td>
+    </tr>
+    <tr th:each="book : ${books}">
+        <td><span th:text="${book.title}"> Title </span></td>
+        <td><span th:text="${book.author}"> Author </span></td>
+    </tr>
+    </tbody>
+</table>
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    let navigation = document.querySelector('.navigation');
+    let menuToggle = document.querySelector('.menuToggle');
+    let header = document.querySelector('header');
+
+    menuToggle.onclick = function(){
+        header.classList.toggle('open');
+    }
+</script>
+</body>
+</html>

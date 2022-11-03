@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>Регистрация в CareerGuide.kz</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="/css/images/favicon.ico">
+
+  <!--<style>-->
+  <!--body{background-color}-->
+  <!--</style>-->
+</head>
+<body cz-shortcut-listen="true">
+<div class="container" >
+  <form method="POST" th:action="@{/registration}" th:object="${registrationRequest}" class="form-signin">
+    <h2 class="form-signin-heading">Введите свои данные для регистрации</h2>
+    <p>
+      <label class="sr-only">firstName</label>
+      <input type="text" name="firstName" class="form-control" th:value="*{firstName}" placeholder="Имя" required="Ввдетите свое имя" autofocus="">
+    </p>
+    <p>
+      <label class="sr-only">lastName</label>
+      <input type="text" name="lastName" class="form-control" th:value="*{lastName}" placeholder="Фамилия" required="Ввдетите свою фамилию">
+    </p>
+    <p>
+      <label class="sr-only">middlename</label>
+      <input type="text" name="middlename" th:value="*{middlename}" class="form-control" placeholder="Отчество">
+    </p>
+    <p>
+      <label class="sr-only">email</label>
+      <input type="email" name="email" th:value="*{email}" class="form-control" placeholder="Эмайл" required="Введите свой эмайл">
+    </p>
+    <p>
+      <label class="sr-only">IIN</label>
+      <input type="number" name="IIN" th:value="*{IIN}" class="form-control" placeholder="ИИН" required="">
+    </p>
+    <p>
+      <label class="sr-only">birthdate</label>
+      <input type="date" name="birthdate" th:value="*{birthdate}" class="form-control" placeholder="Введите свою дату рождения" required="Введите свою дату рождения">
+    </p>
+    <p>
+      <label class="sr-only">gender</label>
+      <input type="text" name="gender" th:value="*{gender}" class="form-control" placeholder="Ваш пол" required="Ваш пол">
+    </p>
+    <p>
+      <label class="sr-only">region</label>
+      <input type="text" name="region" th:value="*{region}" class="form-control" placeholder="Область" required="Область">
+    </p>
+    <p>
+      <label class="sr-only">city</label>
+      <input type="text" name="city" th:value="*{city}" class="form-control" placeholder="Город" required="Город">
+    </p>
+    <p>
+      <label class="sr-only">address</label>
+      <input type="text" name="address" th:value="*{address}" class="form-control" placeholder="Адрес" required="Адрес">
+    </p>
+    <p>
+      <label class="sr-only">school</label>
+      <input type="number" name="school" th:value="*{school}" class="form-control" placeholder="Школа" required="Школа">
+    </p>
+    <p>
+      <label class="sr-only">grade</label>
+      <input type="number" name="grade" th:value="*{grade}" class="form-control" placeholder="Класс" required="Класс">
+    </p>
+
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрироваться</button>
+  </form>
+
+</div>
+<script type="text/javascript">
+  document.getElementById("myButton").onclick = function () {
+    location.href = "/login";
+  };
+
+    $(function() {
+    $("#birthdate").datepicker({dateFormat:"yy-mm-dd"});
+  });
+</script>
+</body>
+</html>

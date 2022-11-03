@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Create New Employee</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="icon" type="image/x-icon" href="/css/images/favicon.ico">
+
+</head>
+<body>
+<div class="container my-3">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <h2>Employee Registration</h2>
+      <form th:action="@{/save}" th:object="${registrationRequest}" th:method="POST">
+        <div class="form-row">
+          <div class="col-md-6 form-group">
+            <label>ИИН</label>
+            <input type="number" class="form-control" th:field="*{IIN}">
+          </div>
+          <div class="col-md-6 form-group">
+            <label>Пароль</label>
+            <input type="number" class="form-control" th:field="*{password}">
+          </div>
+          <div class="col-md-6 form-group">
+            <label>ИМЯ</label>
+            <input type="text" class="form-control" th:field="*{firstName}">
+          </div>
+          <div class="col-md-6 form-group">
+            <label>Фамилия</label>
+            <input type="text" class="form-control" th:field="*{lastName}">
+          </div>
+          <div class="col-md-6 form-group">
+            <label>Отчество</label>
+            <input type="text" class="form-control" th:field="*{middlename}">
+          </div>
+          <div class="col-md-6 form-group">
+            <label>Дата Рождения</label>
+            <input type="text" class="form-control" placeholder="yyyy-MM-dd" id="birthdate" th:field="*{birthdate}">
+          </div>
+          <div class="col-md-6 form-group">
+            <strong>Пол</strong>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" th:field="*{gender}" id="option1" value="1">
+              <label class="form-check-label" for="option1">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" th:field="*{gender}" id="option2" value="0">
+              <label class="form-check-label" for="option2">Female</label>
+            </div>
+          </div>
+          <div class="col-md-6 form-group">
+            <label>Эмайл</label>
+            <input type="email" class="form-control" th:field="*{email}">
+          </div>
+
+          <select class="form-control" th:field="*{region}">
+            <option value="">Choose...</option>
+            <option value="IT">г. Астана</option>
+            <option value="HR">Карагиндская обл.</option>
+            <option value="Sale">Улытауская обл.</option>
+          </select>
+
+          <select class="form-control" th:field="*{city}">
+            <option value="">Choose...</option>
+            <option value="IT">Астана</option>
+            <option value="HR">Караганды</option>
+            <option value="Sale">Жезказган</option>
+          </select>
+
+          <select class="form-control" th:field="*{address}">
+            <option value="">Choose...</option>
+            <option value="IT">Сауран</option>
+            <option value="HR"></option>
+            <option value="Sale">Жезказган</option>
+          </select>
+
+          <div class="col-md-6 form-group">
+            <label>Школа</label>
+            <select class="form-control" th:field="*{school}">
+              <option value="">Choose...</option>
+              <option value="IT">Нурорда</option>
+              <option value="HR">#84</option>
+              <option value="Sale">#59</option>
+            </select>
+          </div>
+          <div class="col-md-6 form-group">
+            <label>Класс</label>
+            <input type="number" class="form-control" th:field="*{grade}">
+          </div>
+
+          <div class="col-md-6 form-group">
+          </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mt-3">Сохранить</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+  $(function() {
+    $("#birthdate").datepicker({dateFormat:"yy-mm-dd"});
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerGuide.kz</title>
+    <link rel="stylesheet" type="text/css" href="/css/results.css"/>
+    <link rel="icon" type="image/x-icon" href="/css/images/favicon.ico">
+
+</head>
+
+<body>
+<header>
+    <a href="home" class="logo">CareerGuide.kz</a>
+    <div class="group">
+        <ul class="navigation">
+            <li><a href="home">Главная страница</a></li>
+            <li><a href="about">О нас</a></li>
+            <li><a href="myAccount">Мой аккаунт</a></li>
+            <li><a href="logout">Выйти</a></li>
+        </ul>
+        <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
+    </div>
+</header>
+<div class = "box">
+    <div class = "titleOfresult">
+        <h2>Ваши результаты</h2>
+        <div class="resultsDesign">
+            <div class="ImagePart">
+                <img class="illustration1" src="/css/images/happy.svg">
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>Направление:</th>
+                        <td id="PathName" >0</td>
+                    </tr>
+                    <tr>
+                        <th>Result:</th>
+                        <td>593 38 954</td>
+                    </tr>
+                    <tr>
+                        <th>Result2:</th>
+                        <td>555 77 855</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script th:inline="javascript">
+    let navigation = document.querySelector('.navigation');
+    let menuToggle = document.querySelector('.menuToggle');
+    let header = document.querySelector('header');
+
+        /*<![CDATA[*/
+        let physMat= /*[[${answersResults.physMat}]]*/ 'physMat';
+        let chemBio= /*[[${answersResults.chemBio}]]*/ 'chemBio';
+        let ling= /*[[${answersResults.ling}]]*/ 'ling';
+        let tech= /*[[${answersResults.tech}]]*/ 'tech';
+        let itVar= /*[[${answersResults.it}]]*/ 'it';
+        let sport= /*[[${answersResults.sport}]]*/ 'sport';
+        let art= /*[[${answersResults.art}]]*/ 'art';
+        let econ= /*[[${answersResults.econ}]]*/ 'econ';
+        let psych= /*[[${answersResults.psych}]]*/ 'psych';
+        let soc= /*[[${answersResults.soc}]]*/ 'soc';
+        let serviceVar= /*[[${answersResults.service}]]*/ 'service';
+
+    /*]]>*/
+        const fruits = new Map([
+            [physMat, "physMat"],
+            [chemBio, "chemBio"],
+            [ling, "ling"],
+            [tech, "tech"],
+            [itVar, "itVar"],
+            [sport, "sport"],
+            [art, "art"],
+            [econ, "econ"],
+            [psych, "psych"],
+            [soc, "soc"],
+            [serviceVar, "serviceVar"],
+        ]);
+
+        let theHighest = Math.max(physMat, chemBio, ling, tech, itVar, sport, art, econ, psych, soc, serviceVar);
+        let name = fruits.get(theHighest);
+
+        if (name == "physMat") {
+            document.getElementById("PathName").innerText = "Физико-математическое";
+        } else if (name == "chemBio")  {
+            document.getElementById("PathName").innerText = "Химико-биологическое";
+        } else if (name == "ling")  {
+            document.getElementById("PathName").innerText = "Лингвистическое";
+        } else if (name == "tech")  {
+            document.getElementById("PathName").innerText = "Техническое";
+        } else if (name == "itVar")  {
+            document.getElementById("PathName").innerText = "Информационные технологии";
+        } else if (name == "sport")  {
+            document.getElementById("PathName").innerText = "Спортивное направление и военное дело";
+        } else if (name == "art")  {
+            document.getElementById("PathName").innerText = "Художественно-эстетическое";
+        } else if (name == "econ")  {
+            document.getElementById("PathName").innerText = "Экономика и маркетинг";
+        } else if (name == "psych")  {
+            document.getElementById("PathName").innerText = "Психолого-педагогическое";
+        } else if (name == "soc")  {
+            document.getElementById("PathName").innerText = "Социально-историческое";
+        } else if (name == "serviceVar")  {
+            document.getElementById("PathName").innerText = "Сфера услуг и производство";
+        }
+
+    menuToggle.onclick = function(){
+        header.classList.toggle('open');
+    }
+</script>
+</body>
+</html>
