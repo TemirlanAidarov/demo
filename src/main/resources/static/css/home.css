@@ -82,43 +82,7 @@ header ul li a:hover::before
     position: relative;
     display: none;
 }
-@media (max-width: 800px)
-{
-    .menuToggle
-    {
-        position: absolute;
-        display: block;
-        font-size: 2em;
-        cursor: pointer;
-        transform: translateX(-20px);
-        z-index: 10;
-    }
-    header .navigation
-    {
-        position: absolute;
-        opacity: 0;
-        visibility: hidden;
-        left: 100%;
-    }
-    header.open .navigation
-    {
-        top: 80px;
-        opacity: 1;
-        visibility: visible;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        background: #fff;
-        width: 100%;
-        height: calc(100vh - 80px);
-        padding: 40px;
-        border-top: 1px solid rgba(0,0,0,0.05);
-    }
-    header.open .navigation li a
-    {
-        font-size: 1.25em;
-    }
-}
+
 
 .box
 {
@@ -180,12 +144,6 @@ header ul li a:hover::before
     padding: 15px;
     margin: 0 auto;
 }
-@media (max-width: 770px) {
-    .box{
-        padding: 20px;
-    }
-
-}
 
 .background
 {
@@ -211,5 +169,70 @@ header ul li a:hover::before
 .illustration1
 {
     width: 250px;
+    z-index: 0;
 }
 
+.fr:before {
+    background-image: url(https://www.countryflags.io/fr/flat/32.png);
+}
+
+@media (max-width: 800px)
+{
+    .menuToggle
+    {
+        position: absolute;
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
+        transform: translateX(-20px);
+        z-index: 10;
+    }
+    header .navigation
+    {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        left: 100%;
+    }
+    header.open .navigation
+    {
+        top: 80px;
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        width: 100%;
+        height: calc(100vh - 80px);
+        padding: 40px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+    }
+    header.open .navigation li a
+    {
+        font-size: 1.25em;
+    }
+
+    .titleOftest
+    {
+        font-size: 17px;
+    }
+
+    img#img1, #img2, #img3, #img4 {
+        display: none;
+    }
+    .divIllus
+    {
+        justify-content: center;
+        z-index: 0;
+    }
+    .illustration1
+    {
+        width: 50%;
+    }
+    .bodybox{
+        background-color: #8bc3ff;
+        height:770px;
+    }
+
+}

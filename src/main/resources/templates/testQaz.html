@@ -17,368 +17,368 @@
 <body cz-shortcut-listen="true">
 <div class="box" >
     <div class="header">
-        <h2>Профориентационный тест</h2>
+        <h2>Кәсіптік бағдар беру тесті</h2>
     </div>
-    <form method="POST" th:action="@{/test}" th:object="${testRequest}" class="form-group">
-            <div class="form-check">
-                <p>1. Выберете предмет в школе, который нравится больше:</p>
-                <div class="options">
-                    <input class="form-check-input" type="radio" th:field="*{q1}" id="option1a" value="A">
-                    <label class="form-check-label" for="option1a">A) Биология</label>
-                </div>
-                <div class="options">
-                    <input class="form-check-input" type="radio" th:field="*{q1}" id="option1b" value="B">
-                    <label class="form-check-label" for="option1b">B) Химия</label>
-                </div>
+    <form method="POST" th:action="@{/testQaz}" th:object="${testRequest}" class="form-group">
+        <div class="form-check">
+            <p>1. Мектепте көбірек ұнайтын пəнді таңдаңыз: </p>
+            <div class="options">
+                <input class="form-check-input" type="radio" th:field="*{q1}" id="option1a" value="A">
+                <label class="form-check-label" for="option1a">A) Биология</label>
             </div>
+            <div class="options">
+                <input class="form-check-input" type="radio" th:field="*{q1}" id="option1b" value="B">
+                <label class="form-check-label" for="option1b">B) Химия</label>
+            </div>
+        </div>
 
         <div class="form-check">
-                <p>2. Меня больше привлекает дело, которое не требует напряжения, и успех которого предопределен,<br>
-                    чем трудное дело, в котором возможны неожиданности:</p>
-                 <div class="options">
-                    <input class="form-check-input" type="radio" th:field="*{q2}" id="option2a" value="A">
-                    <label class="form-check-label" for="option2a">A) да</label>
-                </div>
-                 <div class="options">
-                    <input class="form-check-input" type="radio" th:field="*{q2}" id="option2b" value="B">
-                    <label class="form-check-label" for="option2b">B) нет</label>
-                </div>
+            <p>2. Мені шиеленісті қажет етпейтін жəне тосынсыйлар болуы мүмкін қиын істен гөрі табысы алдын ала анықталған бизнес көбірек қызықтырады: </p>
+            <div class="options">
+                <input class="form-check-input" type="radio" th:field="*{q2}" id="option2a" value="A">
+                <label class="form-check-label" for="option2a">A) Иә</label>
             </div>
-        <div class="form-check">
-                <p>3. Читаете ли вы в свободное время про химические вещества и опыты с ними?</p>
             <div class="options">
-                    <input class="form-check-input" type="radio" th:field="*{q3}" id="option3a" value="A">
-                    <label class="form-check-label" for="option3a">A) да</label>
-                </div>
-            <div class="options">
-                    <input class="form-check-input" type="radio" th:field="*{q3}" id="option3b" value="B">
-                    <label class="form-check-label" for="option3b">B) нет</label>
-                </div>
+                <input class="form-check-input" type="radio" th:field="*{q2}" id="option2b" value="B">
+                <label class="form-check-label" for="option2b">B) Жоқ</label>
             </div>
+        </div>
         <div class="form-check">
-                <p>4.  Согласились ли бы вы учиться биологии или химии всерьез несколько лет в вузе?</p>
+            <p>3. Сіз бос уақытыңызда химиялық заттар мен олармен тəжірибе туралы оқисыз ба?</p>
             <div class="options">
-                    <input class="form-check-input" type="radio" th:field="*{q4}" id="option4a" value="A">
-                    <label class="form-check-label" for="option4a">A) да</label>
-                </div>
-            <div class="options">
-                    <input class="form-check-input" type="radio" th:field="*{q4}" id="option4b" value="B">
-                    <label class="form-check-label" for="option4b">B) нет</label>
-                </div>
+                <input class="form-check-input" type="radio" th:field="*{q3}" id="option3a" value="A">
+                <label class="form-check-label" for="option3a">A) Иә</label>
             </div>
+            <div class="options">
+                <input class="form-check-input" type="radio" th:field="*{q3}" id="option3b" value="B">
+                <label class="form-check-label" for="option3b">B) Жоқ</label>
+            </div>
+        </div>
         <div class="form-check">
-            <p>5. Есть ли у вас успехи хотя бы в одном из этих предметов в школе: алгебра, информатика</p>
+            <p>4. Сіз ЖОО-да бірнеше жыл бойы биология немесе химияны байыпты түрде оқуға келісесіз бе?</p>
+            <div class="options">
+                <input class="form-check-input" type="radio" th:field="*{q4}" id="option4a" value="A">
+                <label class="form-check-label" for="option4a">A) Иә</label>
+            </div>
+            <div class="options">
+                <input class="form-check-input" type="radio" th:field="*{q4}" id="option4b" value="B">
+                <label class="form-check-label" for="option4b">B) Жоқ</label>
+            </div>
+        </div>
+        <div class="form-check">
+            <p>5. Мектепте осы пəндердің кем дегенде біреуінде жетістіктеріңіз бар ма: алгебра, информатика </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q5}" id="option5a" value="A">
-                <label class="form-check-label" for="option5a">A) да</label>
+                <label class="form-check-label" for="option5a">A) Иә</label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q5}" id="option5b" value="B">
-                <label class="form-check-label" for="option5b">B) нет</label>
+                <label class="form-check-label" for="option5b">B) Жоқ</label>
             </div>
         </div>
         <div class="form-check">
-                <p>6. Вам нравится разбирать, собирать и ремонтировать технику в доме?</p>
+            <p>6. Сізге үйдегі жабдықты бөлшектеу, жинау жəне жөндеу ұнайды ма?</p>
             <div class="options">
-                    <input class="form-check-input" type="radio" th:field="*{q6}" id="option6a" value="A">
-                    <label class="form-check-label" for="option6a">A) да</label>
-                </div>
-            <div class="options">
-                    <input class="form-check-input" type="radio" th:field="*{q6}" id="option6b" value="B">
-                    <label class="form-check-label" for="option6b">B) нет</label>
-                </div>
+                <input class="form-check-input" type="radio" th:field="*{q6}" id="option6a" value="A">
+                <label class="form-check-label" for="option6a">A) Иə, бұл қызықты </label>
             </div>
+            <div class="options">
+                <input class="form-check-input" type="radio" th:field="*{q6}" id="option6b" value="B">
+                <label class="form-check-label" for="option6b">B) Жоқ, ұнамайды </label>
+            </div>
+        </div>
         <div class="form-check">
-            <p>7. Вы когда-нибудь проводили химические опыты вне школы?</p>
+            <p>7. Сіз мектептен тыс химиялық тəжірибелер жасап көрдіңіз бе? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q7}" id="option7a" value="A">
-                <label class="form-check-label" for="option7a">A) да</label>
+                <label class="form-check-label" for="option7a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q7}" id="option7b" value="B">
-                <label class="form-check-label" for="option7b">B) нет</label>
+                <label class="form-check-label" for="option7b">B) Жоқ
+                </label>
             </div>
         </div>
         <div class="form-check">
-            <p>8. Было бы Вам интересно посетить строительный объект?</p>
+            <p>8. Құрылыс алаңына бару сізді қызықтырар ма еді? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q8}" id="option8a" value="A">
-                <label class="form-check-label" for="option8a">A) да</label>
+                <label class="form-check-label" for="option8a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q8}" id="option8b" value="B">
-                <label class="form-check-label" for="option8b">B) нет</label>
+                <label class="form-check-label" for="option8b">B) Жоқ </label>
             </div>
         </div>
         <div class="form-check">
-            <p>9. Хотели бы Вы принять участие в разработке механизмов, зданий или сложных приборов?</p>
+            <p>9. Механизмдерді, ғимараттарды немесе күрделі құрылғыларды əзірлеуге қатысқыңыз келер ме еді? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q9}" id="option9a" value="A">
-                <label class="form-check-label" for="option9a">A) да</label>
+                <label class="form-check-label" for="option9a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q9}" id="option9b" value="B">
-                <label class="form-check-label" for="option9b">B) нет</label>
+                <label class="form-check-label" for="option9b">B) Жоқ </label>
             </div>
         </div>
         <div class="form-check">
-            <p>10. Хотели бы вы в своей работе использовать оружие и/или военную технику?</p>
+            <p>10. Сіз өз жұмысыңызда қару-жарақ жəне/немесе əскери техниканы қолданғыңыз келе ме? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q10}" id="option10a" value="A">
-                <label class="form-check-label" for="option10a">A) да</label>
+                <label class="form-check-label" for="option10a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q10}" id="option10b" value="B">
-                <label class="form-check-label" for="option10b">B) нет</label>
+                <label class="form-check-label" for="option10b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p>11. За последний год Вы прочли книгу или развернутую статью по истории или искусству?</p>
+            <p>11. Соңғы жыл ішінде Сіз тарих немесе өнер туралы кітап немесе толық мақала оқыдыңыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q11}" id="option11a" value="A">
-                <label class="form-check-label" for="option11a">A) да</label>
+                <label class="form-check-label" for="option11a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q11}" id="option11b" value="B">
-                <label class="form-check-label" for="option11b">B) нет</label>
+                <label class="form-check-label" for="option11b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p>12. Есть ли у вас интуитивное понимание работы каких-нибудь приборов: механических или электрических?</p>
+            <p>12. Сізде қандай да бір құрылғылардың жұмысы туралы интуитивті түсінік бар ма: механикалық немесе электрлік? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q12}" id="option12a" value="A">
-                <label class="form-check-label" for="option12a">A) да</label>
+                <label class="form-check-label" for="option12a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q12}" id="option12b" value="B">
-                <label class="form-check-label" for="option12b">B) нет</label>
+                <label class="form-check-label" for="option12b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 13. Вам легко даётся физика? </p>
+            <p> 13. Сізге физиканы оқу оңайға беріледі ме?  </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q13}" id="option13a" value="A">
-                <label class="form-check-label" for="option13a">A) Да </label>
+                <label class="form-check-label" for="option13a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q13}" id="option13b" value="B">
-                <label class="form-check-label" for="option13b">B) Нет</label>
+                <label class="form-check-label" for="option13b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 14. Читаете ли Вы с интересом статьи или книги об устройстве организма человека, его функционировании? </p>
+            <p> 14. Сіз адам ағзасының құрылымы, оның қызметі туралы мақалаларды немесе кітаптарды қызығушылықпен оқисыз ба?  </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q14}" id="option14a" value="A">
-                <label class="form-check-label" for="option14a">A) Да </label>
+                <label class="form-check-label" for="option14a">A) Иə </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q14}" id="option14b" value="B">
-                <label class="form-check-label" for="option14b">B) Нет</label>
+                <label class="form-check-label" for="option14b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 15. Вы сочли бы интересными статьи по экономике? </p>
+            <p> 15. Сіз экономика туралы мақалаларды қызықты деп санайсыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q15}" id="option15a" value="A">
-                <label class="form-check-label" for="option15a">A) Да </label>
+                <label class="form-check-label" for="option15a">A)Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q15}" id="option15b" value="B">
-                <label class="form-check-label" for="option15b">B) Нет</label>
+                <label class="form-check-label" for="option15b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 16. Нравится ли Вам посещать зоопарки, ботанические сады или оранжереи? </p>
+            <p> 16. Сіз хайуанаттар бағына, ботаникалық бақтарға немесе жылыжайларға барғанды ұнатасыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q16}" id="option16a" value="A">
-                <label class="form-check-label" for="option16a">A) Да </label>
+                <label class="form-check-label" for="option16a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q16}" id="option16b" value="B">
-                <label class="form-check-label" for="option16b">B) Нет</label>
+                <label class="form-check-label" for="option16b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 17. Посещали ли Вы когда-нибудь технический кружок или кружок по информационным технологиям, и т.п.? </p>
+            <p> 17. Сіз техникалық үйірмеге немесе ақпараттық технологиялар үйірмесіне жəне т.б. барып көргенсіз бе? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q17}" id="option17a" value="A">
-                <label class="form-check-label" for="option17a">A) Да </label>
+                <label class="form-check-label" for="option17a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q17}" id="option17b" value="B">
-                <label class="form-check-label" for="option17b">B) Нет</label>
+                <label class="form-check-label" for="option17b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 18. Геометрия, на Ваш взгляд, сложный предмет? </p>
+            <p> 18. Сіздің ойыңызша, геометрия күрделі тақырып па? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q18}" id="option18a" value="A">
-                <label class="form-check-label" for="option18a">A) Да, очень сложный </label>
+                <label class="form-check-label" for="option18a">A) Иә, өте күрделі </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q18}" id="option18b" value="B">
-                <label class="form-check-label" for="option18b">B) Нет, я легко с ним справляюсь </label>
+                <label class="form-check-label" for="option18b">B) Жоқ, мен үшін ол қиын емес </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q18}" id="option18c" value="V">
-                <label class="form-check-label" for="option18c">C) Дается сложно, но я справляюсь </label>
+                <label class="form-check-label" for="option18c">C) Қиын, бірақ мен оны жеңемін </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 19. Трудно ли вам попросить вернуть долг? </p>
+            <p> 19. Сіз үшін қарызды қайтаруды сұрау қиын ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q19}" id="option19a" value="A">
-                <label class="form-check-label" for="option19a">A) Да, долго думаю как подобрать слова </label>
+                <label class="form-check-label" for="option19a">A) Ия, мен ұзақ уақыт бойы сөздерді қалай таңдауға болатынын ойлаймын </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q19}" id="option19b" value="B">
-                <label class="form-check-label" for="option19b">B) Нет, спрашиваю прямо, без всяких стеснений </label>
+                <label class="form-check-label" for="option19b">B) Жоқ, мен тікелей сұраймын, еш кедергісіз </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 20. Вы достаточно много читаете (не соцсети) и не упустите момент почитать? </p>
+            <p> 20. Сіз көп оқисыз ба (əлеуметтік желі емес) жəне оқу сəтін жіберіп алмауға тырысасыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q20}" id="option20a" value="A">
-                <label class="form-check-label" for="option20a">A) Да </label>
+                <label class="form-check-label" for="option20a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q20}" id="option20b" value="B">
-                <label class="form-check-label" for="option20b">B) Нет</label>
+                <label class="form-check-label" for="option20b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 21. Если бы на свете существовали только две профессии, какую работу вы бы предпочли из двух? Какую работу вы предпочтёте? </p>
+            <p> 21. Егер əлемде тек екі мамандық болса, екеуінің қайсысын таңдар едіңіз? Сіз қандай жұмысты қалайсыз? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q21}" id="option21a" value="A">
-                <label class="form-check-label" for="option21a">A) Ухаживать за животными </label>
+                <label class="form-check-label" for="option21a">A) Жануарларға күтім жасау </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q21}" id="option21b" value="B">
-                <label class="form-check-label" for="option21b">B) Работать с техникой и приборами </label>
+                <label class="form-check-label" for="option21b">B) Техникамен жəне аспаптармен жұмыс істеу </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 22. Было бы вам интересно ежедневно разрабатывать, анализировать химические вещества в лаборатории, на заводе (например, кремы, лекарства, горючее и т.п.)? </p>
+            <p> 22. Сізге зертханада, зауытта (мысалы, кремдер, дəрі-дəрмектер, жанармай жəне т. б.) химиялық заттарды күнделікті жасау, талдау қызықты болар ма еді? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q22}" id="option22a" value="A">
-                <label class="form-check-label" for="option22a">A) Да </label>
+                <label class="form-check-label" for="option22a">A) Иə </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q22}" id="option22b" value="B">
-                <label class="form-check-label" for="option22b">B) Нет</label>
+                <label class="form-check-label" for="option22b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 23.Смотрите ли Вы видео по истории или искусству? </p>
+            <p> 23.Сіз тарих немесе өнер туралы бейнелерді көресіз бе? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q23}" id="option23a" value="A">
-                <label class="form-check-label" for="option23a">A) Да </label>
+                <label class="form-check-label" for="option23a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q23}" id="option23b" value="B">
-                <label class="form-check-label" for="option23b">B) Нет</label>
+                <label class="form-check-label" for="option23b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 24. Вам интересно узнавать сведения из биографий известных и неординарных личностей? </p>
+            <p> 24. Сіз белгілі жəне ерекше тұлғалардың өмірбаянынан ақпарат алғыңыз келе ме? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q24}" id="option24a" value="A">
-                <label class="form-check-label" for="option24a">A) Да, мне это интересно  </label>
+                <label class="form-check-label" for="option24a">A) Иә, бұл маған қызықты  </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q24}" id="option24b" value="B">
-                <label class="form-check-label" for="option24b">B) Нет, не очень </label>
+                <label class="form-check-label" for="option24b">B) Жоқ, онша емес </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 25. Нравилось ли Вам в детстве собирать мозаики, конструкторы? </p>
+            <p> 25. Сізге бала кезіңізде мозаика, конструкторлар жинау ұнады ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q25}" id="option25a" value="A">
-                <label class="form-check-label" for="option25a">A) Да </label>
+                <label class="form-check-label" for="option25a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q25}" id="option25b" value="B">
-                <label class="form-check-label" for="option25b">B) Нет</label>
+                <label class="form-check-label" for="option25b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 26. Вы согласны, что мемуары и воспоминания известных людей бывает увлекательно читать? </p>
+            <p> 26. Атақты адамдардың мемуарлары мен естеліктерін оқу қызықты болатынына келісесіз бе? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q26}" id="option26a" value="A">
-                <label class="form-check-label" for="option26a">A) Да </label>
+                <label class="form-check-label" for="option26a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q26}" id="option26b" value="B">
-                <label class="form-check-label" for="option26b">B) Нет</label>
+                <label class="form-check-label" for="option26b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 27. Вы посещали бы с удовольствием кружок дебатов? </p>
+            <p> 27. Сіз пікірталас үйірмесіне қуана қатысар ма едіңіз? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q27}" id="option27a" value="A">
-                <label class="form-check-label" for="option27a">A) Да </label>
+                <label class="form-check-label" for="option27a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q27}" id="option27b" value="B">
-                <label class="form-check-label" for="option27b">B) Нет</label>
+                <label class="form-check-label" for="option27b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 28. Вы любите участвовать в серьезных дискуссиях на общественные темы и обсуждать разные точки зрения? </p>
+            <p> 28. Сіз əлеуметтік тақырыптар бойынша маңызды пікірталастарға қатысып, əртүрлі көзқарастарды талқылауды ұнатасыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q28}" id="option28a" value="A">
-                <label class="form-check-label" for="option28a">A) Да </label>
+                <label class="form-check-label" for="option28a">A) Иə </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q28}" id="option28b" value="B">
-                <label class="form-check-label" for="option28b">B) Нет</label>
+                <label class="form-check-label" for="option28b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 29. Интересно ли Вам узнавать, что движет людьми и причины человеческих поступков? Предсказывать поведение человека? </p>
+            <p> 29. Сіз адамдарды қандай да бір əрекетке не итермелейтінін жəне адамның іс-əрекетінің себептерін білгіңіз келе ме? Адамның мінез-құлқын болжай алғыңыз келеді ме? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q29}" id="option29a" value="A">
-                <label class="form-check-label" for="option29a">A) Да </label>
+                <label class="form-check-label" for="option29a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q29}" id="option29b" value="B">
-                <label class="form-check-label" for="option29b">B) Нет</label>
+                <label class="form-check-label" for="option29b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 30. Можете ли Вы с легкостью написать стихотворение практически на любую тему? </p>
+            <p> 30. Сіз кез-келген тақырыпқа оңай өлең жаза аласыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q30}" id="option30a" value="A">
-                <label class="form-check-label" for="option30a">A) Да </label>
+                <label class="form-check-label" for="option30a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q30}" id="option30b" value="B">
-                <label class="form-check-label" for="option30b">B) Нет</label>
+                <label class="form-check-label" for="option30b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 31.  Если бы у Вас была возможность пообщаться с великими людьми из прошлого, кто бы это был? </p>
+            <p> 31.  Егер сізде бұрынғы ұлы адамдармен араласу мүмкіндігі болса, ол кім болар еді? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q31}" id="option31a" value="A">
                 <label class="form-check-label" for="option31a">A) Уинстон Черчилль </label>
@@ -394,50 +394,50 @@
         </div>
 
         <div class="form-check">
-            <p> 32. Можно ли сказать, что у Вас отличная память на тексты? </p>
+            <p> 32. Сіз өзіңізді мəтіндерді жаттау үшін керемет жадыға иемін деп айта аласыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q32}" id="option32a" value="A">
-                <label class="form-check-label" for="option32a">A) Да </label>
+                <label class="form-check-label" for="option32a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q32}" id="option32b" value="B">
-                <label class="form-check-label" for="option32b">B) Нет</label>
+                <label class="form-check-label" for="option32b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 33. Любите ли Вы физическую активность? (бег, танцы, плавание и т.д.)  </p>
+            <p> 33. Сіз физикалық белсенділікті ұнатасыз ба? (жүгіру, би, жүзу жəне т.б.)  </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q33}" id="option33a" value="A">
-                <label class="form-check-label" for="option33a">A) Да </label>
+                <label class="form-check-label" for="option33a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q33}" id="option33b" value="B">
-                <label class="form-check-label" for="option33b">B) Нет</label>
+                <label class="form-check-label" for="option33b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 34.  Представьте, что перед Вами журнал и час свободного времени, какой раздел Вы откроете? </p>
+            <p> 34.  Сіздің алдыңызда журнал мен бір сағат бос уақытыңыз бар деп елестетіп көріңізші, сіз қай бөлімді ашасыз? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q34}" id="option34a" value="A">
-                <label class="form-check-label" for="option34a">A) Спортивные новости </label>
+                <label class="form-check-label" for="option34a">A) Спорт жаңалықтары </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q34}" id="option34b" value="B">
-                <label class="form-check-label" for="option34b">B) Медицинские исследования </label>
+                <label class="form-check-label" for="option34b">B) Медициналық зерттеулер </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q34}" id="option34c" value="V">
-                <label class="form-check-label" for="option34c">C) Красота и мода </label>
+                <label class="form-check-label" for="option34c">C) Сұлулық пен сəн </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q34}" id="option34d" value="G">
-                <label class="form-check-label" for="option34d">D) Автомобили </label>
+                <label class="form-check-label" for="option34d">D) Автокөліктер </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q34}" id="option34e" value="D">
-                <label class="form-check-label" for="option34e">E) Интерьер и дизайн </label>
+                <label class="form-check-label" for="option34e">E) Интерьер жəне дизайн </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q34}" id="option34f" value="E">
@@ -446,190 +446,190 @@
         </div>
 
         <div class="form-check">
-            <p> 35.  Можно ли о Вас сказать, что Вы физически сильнее и ловчее своих сверстников? </p>
+            <p> 35.  Сіз өзіңіздің құрдастарыңыздан физикалық тұрғыдан мықты жəне епті екеніңізді айта аласыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q35}" id="option35a" value="A">
-                <label class="form-check-label" for="option35a">A) Да </label>
+                <label class="form-check-label" for="option35a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q35}" id="option35b" value="B">
-                <label class="form-check-label" for="option35b">B) Нет</label>
+                <label class="form-check-label" for="option35b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 36. Вы когда-нибудь писали статьи, фанфики, роман? </p>
+            <p> 36. Сіз мақалалар, фанфиктер, роман жазғансыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q36}" id="option36a" value="A">
-                <label class="form-check-label" for="option36a">A) Да </label>
+                <label class="form-check-label" for="option36a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q36}" id="option36b" value="B">
-                <label class="form-check-label" for="option36b">B) Нет</label>
+                <label class="form-check-label" for="option36b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 37.  Нравится ли Вам анализировать или заполнять графики, таблицы? </p>
+            <p> 37.  Сізге графиктерді, кестелерді талдау немесе толтыру ұнайды ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q37}" id="option37a" value="A">
-                <label class="form-check-label" for="option37a">A) Да </label>
+                <label class="form-check-label" for="option37a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q37}" id="option37b" value="B">
-                <label class="form-check-label" for="option37b">B) Нет</label>
+                <label class="form-check-label" for="option37b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 38.  Занимаетесь ли Вы в школе общественной работой? </p>
+            <p> 38.  Сіз мектепте қоғамдық жұмыстармен айналысасыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q38}" id="option38a" value="A">
-                <label class="form-check-label" for="option38a">A) Да </label>
+                <label class="form-check-label" for="option38a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q38}" id="option38b" value="B">
-                <label class="form-check-label" for="option38b">B) Нет</label>
+                <label class="form-check-label" for="option38b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 39. Нравится ли Вам сравнивать технические характеристики разных компьютеров? </p>
+            <p> 39. Сізге əртүрлі компьютерлердің техникалық сипаттамаларын салыстыру ұнайды ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q39}" id="option39a" value="A">
-                <label class="form-check-label" for="option39a">A) Да </label>
+                <label class="form-check-label" for="option39a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q39}" id="option39b" value="B">
-                <label class="form-check-label" for="option39b">B) Нет</label>
+                <label class="form-check-label" for="option39b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 40.  Вы участвовали в олимпиадах по математике? </p>
+            <p> 40.  Сіз математика пəні бойынша олимпиадаларға қатысқансыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q40}" id="option40a" value="A">
-                <label class="form-check-label" for="option40a">A) Да </label>
+                <label class="form-check-label" for="option40a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q40}" id="option40b" value="B">
-                <label class="form-check-label" for="option40b">B) Нет</label>
+                <label class="form-check-label" for="option40b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 41.  Нравится ли Вам планировать завтрашний день или предстоящую неделю/месяц? </p>
+            <p> 41.  Сізге ертеңгі күнді немесе алдағы аптаны/айды жоспарлау ұнай ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q41}" id="option41a" value="A">
-                <label class="form-check-label" for="option41a">A) Да </label>
+                <label class="form-check-label" for="option41a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q41}" id="option41b" value="B">
-                <label class="form-check-label" for="option41b">B) Нет</label>
+                <label class="form-check-label" for="option41b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 42.  Хотели ли бы вы, чтобы Ваша работа была связана с вычислениями? </p>
+            <p> 42.  Сіздің жұмысыңыз есептеулермен байланысты болғанын қалайсыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q42}" id="option42a" value="A">
-                <label class="form-check-label" for="option42a">A) Да, было бы замечательно </label>
+                <label class="form-check-label" for="option42a">A) Иә, бұл керемет болар еді </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q42}" id="option42b" value="B">
-                <label class="form-check-label" for="option42b">B) Нет, это скучно</label>
+                <label class="form-check-label" for="option42b">B) Жоқ, бұл қызықсыз</label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 43. У вас есть разряды, медали в спорте? </p>
+            <p> 43. Сізде спорт саласында разрядтар, медальдар бар ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q43}" id="option43a" value="A">
-                <label class="form-check-label" for="option43a">A) Да </label>
+                <label class="form-check-label" for="option43a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q43}" id="option43b" value="B">
-                <label class="form-check-label" for="option43b">B) Нет</label>
+                <label class="form-check-label" for="option43b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 44. Занимались ли вы всерьёз физическими упражнениями, спортом, танцами? </p>
+            <p> 44. Сіз дене шынықтырумен, спортпен, бимен шұғылданғансыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q44}" id="option44a" value="A">
-                <label class="form-check-label" for="option44a">A) Да </label>
+                <label class="form-check-label" for="option44a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q44}" id="option44b" value="B">
-                <label class="form-check-label" for="option44b">B) Нет</label>
+                <label class="form-check-label" for="option44b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 45. Легко ли вы запоминаете числовые данные? </p>
+            <p> 45. Сізге сандық деректерді есте сақтау оңай ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q45}" id="option45a" value="A">
-                <label class="form-check-label" for="option45a">A) Да </label>
+                <label class="form-check-label" for="option45a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q45}" id="option45b" value="B">
-                <label class="form-check-label" for="option45b">B) Нет</label>
+                <label class="form-check-label" for="option45b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 46. Вы когда-нибудь увлекались составлением задач, формул? </p>
+            <p> 46. Сіз тапсырмаларды, формулаларды құрастыруға құмар болдыңыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q46}" id="option46a" value="A">
-                <label class="form-check-label" for="option46a">A) Да </label>
+                <label class="form-check-label" for="option46a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q46}" id="option46b" value="B">
-                <label class="form-check-label" for="option46b">B) Нет</label>
+                <label class="form-check-label" for="option46b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 47. Вам интересно узнавать информацию о процессах, которые происходят в обществе? Например, как гибли и формировались цивилизации, как сформировываются социальные классы? </p>
+            <p> 47. Сіз қоғамда болып жатқан процестер туралы ақпаратты білгіңіз келе ме? Мысалы, өркениеттер қалай жойылып, қалыптасты, əлеуметтік таптар қалай қалыптасты? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q47}" id="option47a" value="A">
-                <label class="form-check-label" for="option47a">A) Да </label>
+                <label class="form-check-label" for="option47a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q47}" id="option47b" value="B">
-                <label class="form-check-label" for="option47b">B) Нет</label>
+                <label class="form-check-label" for="option47b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 48. Один человек в 3 раза старше другого. Если разность в их возрасте составляет 32 года, какова сумма их возрастов?</p>
+            <p> 48. Бір адам екіншісінен 3 есе үлкен. Егер олардың жас айырмашылығы 32 жас болса, олардың жасының қосындысы қандай?</p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q48}" id="option48a" value="A">
-                <label class="form-check-label" for="option48a">A) 64 года </label>
+                <label class="form-check-label" for="option48a">A) 64 жыл </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q48}" id="option48b" value="B">
-                <label class="form-check-label" for="option48b">B) 69 года </label>
+                <label class="form-check-label" for="option48b">B) 69 жыл </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 49. Вы когда-нибудь пробовали программировать самостоятельно? </p>
+            <p> 49. Сіз өзіңіз бағдарламалауға тырыстыңыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q49}" id="option49a" value="A">
-                <label class="form-check-label" for="option49a">A) Да </label>
+                <label class="form-check-label" for="option49a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q49}" id="option49b" value="B">
-                <label class="form-check-label" for="option49b">B) Нет</label>
+                <label class="form-check-label" for="option49b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 50.  От чего вы получаете наибольшее удовольствие?  </p>
+            <p> 50.  Сіз неден көбірек лəззат аласыз?  </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q50}" id="option50a" value="A">
-                <label class="form-check-label" for="option50a">A) Танцы </label>
+                <label class="form-check-label" for="option50a">A) Би </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q50}" id="option50b" value="B">
@@ -641,195 +641,195 @@
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q50}" id="option50d" value="G">
-                <label class="form-check-label" for="option50d">D) Чтение книг </label>
+                <label class="form-check-label" for="option50d">D) Кітап оқу </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 51.  Обращаются ли к Вам знакомые или родственники, если им нужна помощь с компьютерными программами? </p>
+            <p> 51.  Таныстарыңыз немесе туыстарыңыз компьютерлік бағдарламаларға қатысты көмек қажет болса, сізге хабарласа ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q51}" id="option51a" value="A">
-                <label class="form-check-label" for="option51a">A) Да, было такое </label>
+                <label class="form-check-label" for="option51a">A) Иә, солай болған </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q51}" id="option51b" value="B">
-                <label class="form-check-label" for="option51b">B) Нет, ни разу </label>
+                <label class="form-check-label" for="option51b">B) Жоқ, мүлдем болмаған </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 52. Вам нравится ломать голову над логическими задачами? </p>
+            <p> 52. Сіз логикалық тапсырмаларды шешкенді ұнатасыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q52}" id="option52a" value="A">
-                <label class="form-check-label" for="option52a">A) Да, это очень интересно </label>
+                <label class="form-check-label" for="option52a">A) Иә, бұл өте қызықты </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q52}" id="option52b" value="B">
-                <label class="form-check-label" for="option52b">B) Нет, мне это не интересно </label>
+                <label class="form-check-label" for="option52b">B) Жоқ, бұл маған қызық емес </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 53. Можно ли о Вас сказать, что Вы проводите за компьютером большую часть дня? </p>
+            <p> 53. Сіз күннің көп бөлігін компьютерде өткізесіз деп айта аласыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q53}" id="option53a" value="A">
-                <label class="form-check-label" for="option53a">A) Да, можно так сказать </label>
+                <label class="form-check-label" for="option53a">A) Иә, солай айтуға болады </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q53}" id="option53b" value="B">
-                <label class="form-check-label" for="option53b">B) Нет, это не обо мне </label>
+                <label class="form-check-label" for="option53b">B) Жоқ, бұл мен туралы емес </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 54. Что не вместится даже в самую большую кастрюлю? </p>
+            <p> 54. Тіпті ең үлкен табаға (кастрюльге) не сыймайды? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q54}" id="option54a" value="A">
-                <label class="form-check-label" for="option54a">A) Крышка от этой кастрюли </label>
+                <label class="form-check-label" for="option54a">A) Сол табаның (кастрюльдің) қақпағы </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q54}" id="option54b" value="B">
-                <label class="form-check-label" for="option54b">B) Слон</label>
+                <label class="form-check-label" for="option54b">B) Піл</label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 55. Любите ли Вы что-то мастерить, шить? </p>
+            <p> 55. Сіз бірдеңе жасауды, тігуді ұнатасыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q55}" id="option55a" value="A">
-                <label class="form-check-label" for="option55a">A) Да </label>
+                <label class="form-check-label" for="option55a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q55}" id="option55b" value="B">
-                <label class="form-check-label" for="option55b">B) Нет</label>
+                <label class="form-check-label" for="option55b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 56. Можно ли Вас назвать генератором идей? </p>
+            <p> 56. Сізді идея генераторы деп атауға бола ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q56}" id="option56a" value="A">
-                <label class="form-check-label" for="option56a">A) Да </label>
+                <label class="form-check-label" for="option56a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q56}" id="option56b" value="B">
-                <label class="form-check-label" for="option56b">B) Нет</label>
+                <label class="form-check-label" for="option56b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 57. Представьте, что в школе нужно поставить спектакль, какую роль в организации Вы возьмете на себя? </p>
+            <p> 57. Мектепте спектакль қою керек деп елестетіп көріңізші, сіз ұйымда қандай рөл атқарар едіңіз? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q57}" id="option57a" value="A">
-                <label class="form-check-label" for="option57a">A) Придумаю сценарий </label>
+                <label class="form-check-label" for="option57a">A) Мен сценарий ойлап табар едім </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q57}" id="option57b" value="B">
-                <label class="form-check-label" for="option57b">B) Придумаю декорации и костюмы</label>
+                <label class="form-check-label" for="option57b">B) Мен декорациялар мен костюмдер ойлап табар едім </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q57}" id="option57c" value="V">
-                <label class="form-check-label" for="option57c">C) Буду актером</label>
+                <label class="form-check-label" for="option57c">C) Актер болар едім</label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q57}" id="option57d" value="G">
-                <label class="form-check-label" for="option57d">D) Буду управлять процессом</label>
+                <label class="form-check-label" for="option57d">D) Процесті басқарар едім </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 58.  Вам сложно заметить ошибки в вычислениях? </p>
+            <p> 58.  Есептеу кезінде қателерді байқау қиын ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q58}" id="option58a" value="A">
-                <label class="form-check-label" for="option58a">A) Да </label>
+                <label class="form-check-label" for="option58a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q58}" id="option58b" value="B">
-                <label class="form-check-label" for="option58b">B) Нет</label>
+                <label class="form-check-label" for="option58b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 59. Хотели бы вы учиться профессионально какому-нибудь из этих ремёсел? Шитьё, кулинария, парикмахерское дело, столярное и плотницкое дело, ювелирное дело, маникюр, массаж и т.п. </p>
+            <p> 59. Төменде көрсетілген қолөнердің кез келгенін кəсіби түрде үйренгіңіз келе ме? Тігін, аспаздық, шаштараз, ағаш ұстасы жəне ағаш ұстасы, зергерлік бұйымдар, маникюр, массаж жəне т.б. </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q59}" id="option59a" value="A">
-                <label class="form-check-label" for="option59a">A) Да </label>
+                <label class="form-check-label" for="option59a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q59}" id="option59b" value="B">
-                <label class="form-check-label" for="option59b">B) Нет</label>
+                <label class="form-check-label" for="option59b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 60. Трудно ли вам выступать перед аудиторией, делая доклад или отвечая урок? </p>
+            <p> 60. Баяндама жасау немесе сабаққа жауап беру арқылы аудитория алдында сөйлеу қиын ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q60}" id="option60a" value="A">
-                <label class="form-check-label" for="option60a">A) Да, я испытываю сложности с публичными выступлениями </label>
+                <label class="form-check-label" for="option60a">A) Иә, мен көпшілік алдында сөйлеуде қиындықтарға тап боламын </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q60}" id="option60b" value="B">
-                <label class="form-check-label" for="option60b">B) Нет, я с легкостью выступаю перед публикой </label>
+                <label class="form-check-label" for="option60b">B) Жоқ, мен көпшілік алдында оңай сөйлеймін </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 61. Как Вы считаете, нужно ли доводить работу до совершенства, если никто не увидит разницы? </p>
+            <p> 61. Сіз қалай ойлайсыз, егер ешкім айырмашылықты байқамаса, жұмысты шыңдау қажет пе? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q61}" id="option61a" value="A">
-                <label class="form-check-label" for="option61a">A) Да </label>
+                <label class="form-check-label" for="option61a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q61}" id="option61b" value="B">
-                <label class="form-check-label" for="option61b">B) Нет</label>
+                <label class="form-check-label" for="option61b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 62. Говорили ли вам, что у вас золотые руки? </p>
+            <p> 62. Сізге қолыңыздан барлығы келеді деп айтқан ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q62}" id="option62a" value="A">
-                <label class="form-check-label" for="option62a">A) Да </label>
+                <label class="form-check-label" for="option62a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q62}" id="option62b" value="B">
-                <label class="form-check-label" for="option62b">B) Нет</label>
+                <label class="form-check-label" for="option62b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 63. Случалось ли вам увлечённо без сна и еды работать над своим творческим продуктом (песня, фильм, рисунок, рассказ и т.д.)? </p>
+            <p> 63. Сіз өзіңіздің шығармашылық өніміңізбен (əн, фильм, сурет, əңгіме жəне т.б.) жұмыс істеуге құмар болдыңыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q63}" id="option63a" value="A">
-                <label class="form-check-label" for="option63a">A) Да, бывало </label>
+                <label class="form-check-label" for="option63a">A) Иә, болып тұрады </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q63}" id="option63b" value="B">
-                <label class="form-check-label" for="option63b">B) Нет, так сильно я не был увлечен </label>
+                <label class="form-check-label" for="option63b">B) Жоқ, мен қатты құмар емеспін </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 64. Нравится ли Вам рисовать? </p>
+            <p> 64. Сізге сурет салу ұнайды ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q64}" id="option64a" value="A">
-                <label class="form-check-label" for="option64a">A) Да </label>
+                <label class="form-check-label" for="option64a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q64}" id="option64b" value="B">
-                <label class="form-check-label" for="option64b">B) Нет</label>
+                <label class="form-check-label" for="option64b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 65.  Выберете из предложенных одну профессию: </p>
+            <p> 65.  Ұсынылғандардың ішінен бір мамандықты таңдаңыз: </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q65}" id="option65a" value="A">
-                <label class="form-check-label" for="option65a">A) педагог </label>
+                <label class="form-check-label" for="option65a">A) мұғалім </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q65}" id="option65b" value="B">
-                <label class="form-check-label" for="option65b">B) переводчик с иностранного языка </label>
+                <label class="form-check-label" for="option65b">B) шет тілінен аудармашы </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q65}" id="option65c" value="V">
@@ -837,276 +837,276 @@
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q65}" id="option65d" value="G">
-                <label class="form-check-label" for="option65d">D) врач </label>
+                <label class="form-check-label" for="option65d">D) дəрігер </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 66. Легко ли вы придумываете что-то новое? </p>
+            <p> 66. Сіз жаңа нəрсені оңай ойлап табасыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q66}" id="option66a" value="A">
-                <label class="form-check-label" for="option66a">A) Да </label>
+                <label class="form-check-label" for="option66a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q66}" id="option66b" value="B">
-                <label class="form-check-label" for="option66b">B) Нет</label>
+                <label class="form-check-label" for="option66b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 67. Суммарный возраст членов семьи из 4 человек равняется 68, а 4 года назад равнялся 53. Сколько лет младшему члену семьи? </p>
+            <p> 67. 4 адамнан тұратын отбасы мүшелерінің жалпы жасы 68-ге тең, ал 4 жыл бұрын 53-ке тең болған. Кіші отбасы мүшесі неше жаста? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q67}" id="option67a" value="A">
-                <label class="form-check-label" for="option67a">A) 3 года </label>
+                <label class="form-check-label" for="option67a">A) 3 жас </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q67}" id="option67b" value="B">
-                <label class="form-check-label" for="option67b">B) 5 лет </label>
+                <label class="form-check-label" for="option67b">B) 5 жас </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 68.  Хорошо ли вы делаете что-то из этого: рисуете, сочиняете музыку, придумываете интересные сюжеты, снимаете интересные видео? </p>
+            <p> 68.  Сіз келесі аталғанның бəрін жақсы жасайсыз ба: сурет салу, музыка жазу, қызықты сюжеттер ойлап табу, қызықты бейнелер түсіру? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q68}" id="option68a" value="A">
-                <label class="form-check-label" for="option68a">A) Да </label>
+                <label class="form-check-label" for="option68a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q68}" id="option68b" value="B">
-                <label class="form-check-label" for="option68b">B) Нет</label>
+                <label class="form-check-label" for="option68b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 69. Если Вы находите дома какие-то ненужные запчасти или ткани Вы их выбросите? </p>
+            <p> 69. Егер Сіз үйде қажет емес бөлшектерді немесе маталарды тапсаңыз оларды тастайсыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q69}" id="option69a" value="A">
-                <label class="form-check-label" for="option69a">A) Да </label>
+                <label class="form-check-label" for="option69a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q69}" id="option69b" value="B">
-                <label class="form-check-label" for="option69b">B) Нет, попытаюсь смастерить что-нибудь из них</label>
+                <label class="form-check-label" for="option69b">B) Жоқ, олардан бірдеңе жасауға тырысамын</label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 70. Вам нравится систематизировать и раскладывать свои вещи, бумаги? </p>
+            <p> 70. Сіз өзіңіздің заттарыңызды, қағаздарыңызды ұйымдастыруды жəне орналастыруды ұнатасыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q70}" id="option70a" value="A">
-                <label class="form-check-label" for="option70a">A) Да </label>
+                <label class="form-check-label" for="option70a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q70}" id="option70b" value="B">
-                <label class="form-check-label" for="option70b">B) Нет</label>
+                <label class="form-check-label" for="option70b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 71. Вы склонны экономить и накапливать деньги? </p>
+            <p> 71. Сіз ақша үнемдеуге жəне жинауға бейімсіз бе? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q71}" id="option71a" value="A">
-                <label class="form-check-label" for="option71a">A) Да </label>
+                <label class="form-check-label" for="option71a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q71}" id="option71b" value="B">
-                <label class="form-check-label" for="option71b">B) Нет</label>
+                <label class="form-check-label" for="option71b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 72. Если Вы стали свидетелем конфликта, попытаетесь ли Вы его урегулировать? </p>
+            <p> 72. Егер сіз қандай да бір қақтығыстың, ұрыстың куəсі болсаңыз, оны шешуге тырысасыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q72}" id="option72a" value="A">
-                <label class="form-check-label" for="option72a">A) Да </label>
+                <label class="form-check-label" for="option72a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q72}" id="option72b" value="B">
-                <label class="form-check-label" for="option72b">B) Нет, пусть сами разбираются</label>
+                <label class="form-check-label" for="option72b">B) Жоқ, олар өздері шешсін</label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 73. Если бы за всё платили одинаково, что бы вы выбрали делать каждый день с утра до вечера? </p>
+            <p> 73. Егер бəрі бірдей төленсе, сіз күн сайын таңертеңнен кешке дейін не істеуді таңдайсыз? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q73}" id="option73a" value="A">
-                <label class="form-check-label" for="option73a">A) Фотографировать и снимать видео </label>
+                <label class="form-check-label" for="option73a">A) Суретке түсіру жəне бейне түсіру </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q73}" id="option73b" value="B">
-                <label class="form-check-label" for="option73b">B) Собирать сложные устройства</label>
+                <label class="form-check-label" for="option73b">B) Күрделі құрылғыларды жинау </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q73}" id="option73c" value="V">
-                <label class="form-check-label" for="option73c">C) Создавать дизайн сайтов, интерьеров и т.д. </label>
+                <label class="form-check-label" for="option73c">C) Веб-сайттардың, интерьерлердің жəне т.б. дизайнын жасау </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q73}" id="option73d" value="G">
-                <label class="form-check-label" for="option73d">D) Обучать других </label>
+                <label class="form-check-label" for="option73d">D) Басқаларды оқыту </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 74.  Нравится ли Вам смотреть видеоролики о том как кто-то шьет, клеит или мастерит что-то? </p>
+            <p> 74.  Сізге біреудің тігу, желімдеу немесе бірдеңе жасау туралы бейнелерін көру ұнайды ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q74}" id="option74a" value="A">
-                <label class="form-check-label" for="option74a">A) Да </label>
+                <label class="form-check-label" for="option74a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q74}" id="option74b" value="B">
-                <label class="form-check-label" for="option74b">B) Нет</label>
+                <label class="form-check-label" for="option74b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 75. Сумеете ли Вы понятно объяснить тему однокласснику(це), если он ее не понял? </p>
+            <p> 75. Егер сыныптасыңыз тақырыпты түсінбесе, Сіз оған оны нақты түсіндіре аласыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q75}" id="option75a" value="A">
-                <label class="form-check-label" for="option75a">A) Да </label>
+                <label class="form-check-label" for="option75a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q75}" id="option75b" value="B">
-                <label class="form-check-label" for="option75b">B) Нет</label>
+                <label class="form-check-label" for="option75b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 76.  Вы любите скрупулёзно составлять таблицы и заполнять их данными? </p>
+            <p> 76.  Сіз кестелерді мұқият құрастырып, оларды деректермен толтыруды ұнатасыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q76}" id="option76a" value="A">
-                <label class="form-check-label" for="option76a">A) Да </label>
+                <label class="form-check-label" for="option76a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q76}" id="option76b" value="B">
-                <label class="form-check-label" for="option76b">B) Нет</label>
+                <label class="form-check-label" for="option76b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 77.  Нравится ли вам, общаясь с кем-то, подмечать интонации и язык тела, чтобы составить картину о собеседнике? </p>
+            <p> 77.  Сіз біреумен сөйлесіп, əңгімелесуші туралы жалпы бейне құрастыру үшін интонация мен дене тілін байқағанды ұнатасыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q77}" id="option77a" value="A">
-                <label class="form-check-label" for="option77a">A) Да </label>
+                <label class="form-check-label" for="option77a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q77}" id="option77b" value="B">
-                <label class="form-check-label" for="option77b">B) Нет</label>
+                <label class="form-check-label" for="option77b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 78. Хотите ли вы, чтобы Ваша будущая работа была непосредственно связана с людьми? </p>
+            <p> 78. Сіздің болашақ жұмысыңыз адамдармен тікелей байланысты болғанын қалайсыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q78}" id="option78a" value="A">
-                <label class="form-check-label" for="option78a">A) Да </label>
+                <label class="form-check-label" for="option78a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q78}" id="option78b" value="B">
-                <label class="form-check-label" for="option78b">B) Нет</label>
+                <label class="form-check-label" for="option78b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 79. Слышали ли вы положительные отзывы о том, что вы сделали руками? </p>
+            <p> 79. Сіз өзіңіздің қолыңызбен істегеніңіз туралы оң пікірлер естідіңіз бе? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q79}" id="option79a" value="A">
-                <label class="form-check-label" for="option79a">A) Да </label>
+                <label class="form-check-label" for="option79a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q79}" id="option79b" value="B">
-                <label class="form-check-label" for="option79b">B) Нет</label>
+                <label class="form-check-label" for="option79b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 80. Считаете ли вы себя храбрым человеком (способным не бояться или успешно преодолевать страх)? </p>
+            <p> 80. Сіз өзіңізді батыл адам деп санайсыз ба (қорықпауға немесе қорқынышты сəтті жеңуге қабілетті)? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q80}" id="option80a" value="A">
-                <label class="form-check-label" for="option80a">A) Да </label>
+                <label class="form-check-label" for="option80a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q80}" id="option80b" value="B">
-                <label class="form-check-label" for="option80b">B) Нет</label>
+                <label class="form-check-label" for="option80b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 81. Легко ли вы вливаетесь в новую компанию? </p>
+            <p> 81. Сіз жаңа ортаға оңай қосыласыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q81}" id="option81a" value="A">
-                <label class="form-check-label" for="option81a">A) Да </label>
+                <label class="form-check-label" for="option81a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q81}" id="option81b" value="B">
-                <label class="form-check-label" for="option81b">B) Нет</label>
+                <label class="form-check-label" for="option81b">B) Жоқ </label>
             </div>
         </div>
 
 
         <div class="form-check">
-            <p> 82. Проехав треть пути, пассажир скорого поезда, наконец заснул. Когда он проснулся, до станции назначения оставалось проехать половину того расстояния, что отделяло его от станции назначения, когда он заснул. Какую часть пути проехал поезд, пока пассажир спал? </p>
+            <p> 82. Жолдың үштен бірін жүріп өтіп, жедел пойыздың жолаушысы ұйықтап кетті. Ол оянған кезде, межелі станцияға дейін ол ұйықтап жатқан кезде оны межелі станциядан бөліп тұрған қашықтықтың жартысы қалды. Жолаушы ұйықтап жатқанда пойыз жолдың қанша бөлігін жүріп өтті? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q82}" id="option82a" value="A">
-                <label class="form-check-label" for="option82a">A) 1/3 пути </label>
+                <label class="form-check-label" for="option82a">A) жолдың 1/3 бөлігін </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q82}" id="option82b" value="B">
-                <label class="form-check-label" for="option82b">B) 1/2 пути</label>
+                <label class="form-check-label" for="option82b">B) жолдың 1/2 бөлігін </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q82}" id="option82c" value="V">
-                <label class="form-check-label" for="option82b">B) 1/4 пути</label>
+                <label class="form-check-label" for="option82b">B) жолдың 1/4 бөлігін</label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 83. Назвали ли бы Вы интересными статьи, книги, сайты о маркетинге и продажах? </p>
+            <p> 83. Сіз маркетинг жəне сату туралы мақалаларды, кітаптарды, сайттарды қызықты деп атайсыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q83}" id="option83a" value="A">
-                <label class="form-check-label" for="option83a">A) Да </label>
+                <label class="form-check-label" for="option83a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q83}" id="option83b" value="B">
-                <label class="form-check-label" for="option83b">B) Нет</label>
+                <label class="form-check-label" for="option83b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 84. Какой вариант работы Вы предпочли бы для себя? </p>
+            <p> 84. Сіз өзіңіз үшін қандай жұмыс нұсқасын қалар едіңіз? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q84}" id="option84a" value="A">
-                <label class="form-check-label" for="option84a">A) Быть начальником и руководить процессом </label>
+                <label class="form-check-label" for="option84a">A) Бастық болу жəне процесті басқару </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q84}" id="option84b" value="B">
-                <label class="form-check-label" for="option84b">B) Работать под руководством </label>
+                <label class="form-check-label" for="option84b">B) Басшылықтың қоластында жұмыс істеу </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q84}" id="option84c" value="V">
-                <label class="form-check-label" for="option84c">C) Лучше работать на себя </label>
+                <label class="form-check-label" for="option84c">C) Жеке өзіме жұмыс жасаған жақсырақ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 85.  Смотрите ли Вы регулярно мотивирующие видео, или читаете книги по мотивации? </p>
+            <p> 85.  Сіз үнемі мотивациялық бейнелерді көресіз бе, əлде мотивациялық кітаптарды оқисыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q85}" id="option85a" value="A">
-                <label class="form-check-label" for="option85a">A) Да </label>
+                <label class="form-check-label" for="option85a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q85}" id="option85b" value="B">
-                <label class="form-check-label" for="option85b">B) Нет</label>
+                <label class="form-check-label" for="option85b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 86.  Какой предмет в школе Вы любите больше остальных? </p>
+            <p> 86.  Сіз мектептегі қай пəнді басқалардан артық жақсы көресіз? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q86}" id="option86a" value="A">
                 <label class="form-check-label" for="option86a">A) Алгебра </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q86}" id="option86b" value="B">
-                <label class="form-check-label" for="option86b">B) Литература </label>
+                <label class="form-check-label" for="option86b">B) Əдебиет </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q86}" id="option86c" value="V">
@@ -1118,7 +1118,7 @@
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q86}" id="option86e" value="D">
-                <label class="form-check-label" for="option86e">E) Физическая культура </label>
+                <label class="form-check-label" for="option86e">E) Дене шынықтыру </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q86}" id="option86f" value="E">
@@ -1126,277 +1126,277 @@
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q86}" id="option86g" value="J">
-                <label class="form-check-label" for="option86g">G) Алгебра </label>
+                <label class="form-check-label" for="option86g">G) Шет тілі </label>
             </div>
         </div>
 
 
         <div class="form-check">
-            <p> 87. Занимались ли вы когда-нибудь боевыми искусствами? Например, борьбой, боксом, каратэ и т.д.? </p>
+            <p> 87. Сіз жекпе-жек өнерімен айналысып көргенсіз бе? Мысалы, күрес, бокс, каратэ жəне т.б.? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q87}" id="option87a" value="A">
-                <label class="form-check-label" for="option87a">A) Да </label>
+                <label class="form-check-label" for="option87a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q87}" id="option87b" value="B">
-                <label class="form-check-label" for="option87b">B) Нет</label>
+                <label class="form-check-label" for="option87b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 88. Можете ли Вы с точностью сказать, где у Вас лежит та или иная вещь? </p>
+            <p> 88. Сізде қандай да бір заттың бар екенін жəне қайта тұрғанын нақты айта аласыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q88}" id="option88a" value="A">
-                <label class="form-check-label" for="option88a">A) Да, у меня все личные вещи имеют свое место </label>
+                <label class="form-check-label" for="option88a">A) Иә, менің барлық жеке заттарымның өз орны бар </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q88}" id="option88b" value="B">
-                <label class="form-check-label" for="option88b">B) Нет, у меня «творческий беспорядок» </label>
+                <label class="form-check-label" for="option88b">B) Жоқ, менде «шығармашылық тəртіпсіздік» </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 89. Можете ли Вы представить себя в работе, связанной с экстремальными ситуациями? Например, пожарный, военный? </p>
+            <p> 89. Сіз өзіңізді төтенше жағдайларға байланысты жұмыста елестете аласыз ба? Мысалы, өрт сөндіруші, əскери? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q89}" id="option89a" value="A">
-                <label class="form-check-label" for="option89a">A) Да </label>
+                <label class="form-check-label" for="option89a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q89}" id="option89b" value="B">
-                <label class="form-check-label" for="option89b">B) Нет</label>
+                <label class="form-check-label" for="option89b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 90. Как вы оцениваете ваше здоровье? </p>
+            <p> 90. Сіз өз денсаулығыңызды қалай бағалайсыз? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q90}" id="option90a" value="A">
-                <label class="form-check-label" for="option90a">A) Я полностью здоров </label>
+                <label class="form-check-label" for="option90a">A) Мен толығымен саумын </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q90}" id="option90b" value="B">
-                <label class="form-check-label" for="option90b">B) Есть некоторые проблемы со здоровьем</label>
+                <label class="form-check-label" for="option90b">B) Денсаулығыма қатысты кейбір мəселелер бар</label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 91. Вы постоянно думаете о том, как бы  вам заработать денег? </p>
+            <p> 91. Сіз қалай ақша табуға болатындығы туралы үнемі ойлайсыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q91}" id="option91a" value="A">
-                <label class="form-check-label" for="option91a">A) Да </label>
+                <label class="form-check-label" for="option91a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q91}" id="option91b" value="B">
-                <label class="form-check-label" for="option91b">B) Нет</label>
+                <label class="form-check-label" for="option91b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 92. Вам нравится больше работать руками, чем вычислять, сочинять и читать тексты? </p>
+            <p> 92. Сіз мəтіндерді есептеуден, жазудан жəне оқудан гөрі қолыңызбен жұмыс істегенді ұнатасыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q92}" id="option92a" value="A">
-                <label class="form-check-label" for="option92a">A) Да </label>
+                <label class="form-check-label" for="option92a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q92}" id="option92b" value="B">
-                <label class="form-check-label" for="option92b">B) Нет</label>
+                <label class="form-check-label" for="option92b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 93.  Сможете ли вы выдержать концентрированные длительные физические нагрузки без вреда для своего организма? </p>
+            <p> 93.  Сіз денеңізге зиян келтірместен шоғырланған ұзақ физикалық жаттығуларға төтеп бере аласыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q93}" id="option93a" value="A">
-                <label class="form-check-label" for="option93a">A) Скорее всего, да </label>
+                <label class="form-check-label" for="option93a">A) Мүмкін, иə </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q93}" id="option93b" value="B">
-                <label class="form-check-label" for="option93b">B) Скорее всего, нет </label>
+                <label class="form-check-label" for="option93b">B) Жоқ деп ойлаймын </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 94. Вам часто говорят, что Вы хорошо разбираетесь в людях? </p>
+            <p> 94. Сізге адамдарды жақсы тани алатындығыңыз жайлы жиі айтады ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q94}" id="option94a" value="A">
-                <label class="form-check-label" for="option94a">A) Да, часто </label>
+                <label class="form-check-label" for="option94a">A) Иə, жиі </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q94}" id="option94b" value="B">
-                <label class="form-check-label" for="option94b">B) Нет, такое случается не часто </label>
+                <label class="form-check-label" for="option94b">B) Жоқ, бұл жиі бола бермейді </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 95. Смотрите ли Вы фильмы на иностранном языке, чтобы услышать оригинальный голос актеров? </p>
+            <p> 95. Актерлердің түпнұсқа дауысын есту үшін шет тіліндегі фильмдерді көресіз бе? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q95}" id="option95a" value="A">
-                <label class="form-check-label" for="option95a">A) Да, всегда бывает интересно сравнить дубляж и оригинал </label>
+                <label class="form-check-label" for="option95a">A) Иə, дубляж бен түпнұсқаны салыстыру əрқашан қызықты </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q95}" id="option95b" value="B">
-                <label class="form-check-label" for="option95b">B) Нет, не вижу смысла </label>
+                <label class="form-check-label" for="option95b">B) Жоқ, бұл мағынасы жоқ іс деп санаймын </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 96. Нравится ли Вам ухаживать за животными? </p>
+            <p> 96. Сізге жануарларға күтім жасау ұнайды ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q96}" id="option96a" value="A">
-                <label class="form-check-label" for="option96a">A) Да </label>
+                <label class="form-check-label" for="option96a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q96}" id="option96b" value="B">
-                <label class="form-check-label" for="option96b">B) Нет</label>
+                <label class="form-check-label" for="option96b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 97. У Вас когда-нибудь спрашивали совета по вопросам взаимоотношений людей? </p>
+            <p> 97. Сізден адамдардың қарым-қатынасы туралы кеңес сұраған кез болды ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q97}" id="option97a" value="A">
-                <label class="form-check-label" for="option97a">A) Да </label>
+                <label class="form-check-label" for="option97a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q97}" id="option97b" value="B">
-                <label class="form-check-label" for="option97b">B) Нет</label>
+                <label class="form-check-label" for="option97b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 98. В какой роли Вам было бы комфортнее? </p>
+            <p> 98. Сізге қандай рөл ыңғайлы болар еді? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q98}" id="option98a" value="A">
-                <label class="form-check-label" for="option98a">A) Креативный менеджер </label>
+                <label class="form-check-label" for="option98a">A) Шығармашылық менеджер </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q98}" id="option98b" value="B">
-                <label class="form-check-label" for="option98b">B) Руководитель </label>
+                <label class="form-check-label" for="option98b">B) Басшы </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q98}" id="option98c" value="V">
-                <label class="form-check-label" for="option98c">C) Исполнитель </label>
+                <label class="form-check-label" for="option98c">C) Орындаушы </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 99. Отметьте Вашу сильную сторону: </p>
+            <p> 99. Мықты жақтарыңызды белгілеңіз: </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q99}" id="option99a" value="A">
                 <label class="form-check-label" for="option99a">A) Логика </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q99}" id="option99b" value="B">
-                <label class="form-check-label" for="option99b">B) Креативность </label>
+                <label class="form-check-label" for="option99b">B) Шығармашылық </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q99}" id="option99c" value="V">
-                <label class="form-check-label" for="option99c">C) Умение общаться с людьми </label>
+                <label class="form-check-label" for="option99c">C) Адамдармен қарым-қатынас жасау мүмкіндігі </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q99}" id="option99d" value="G">
-                <label class="form-check-label" for="option99d">D) Внимательность и организованность </label>
+                <label class="form-check-label" for="option99d">D) Зейін жəне ұйымшылдық </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 100. После успешного ответа на экзамене я скорее с облегчением вздохну (пронесло!), чем порадуюсь хорошей оценке </p>
+            <p> 100. Емтиханға сəтті жауап бергеннен кейін мен жақсы бағадан гөрі, өтіп кеткені үшін жеңіл дем аламын </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q100}" id="option100a" value="A">
-                <label class="form-check-label" for="option100a">A) Да </label>
+                <label class="form-check-label" for="option100a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q100}" id="option100b" value="B">
-                <label class="form-check-label" for="option100b">B) Нет</label>
+                <label class="form-check-label" for="option100b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 101. Вы любили в младшем школьном возрасте играть в школу, представляя  себя учителем? </p>
+            <p> 101. Сіз бастауыш мектеп жасында өзіңізді мұғалім ретінде елестетіп, мектеп сияқты ойнағанды ұнатушы едіңіз бе? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q101}" id="option101a" value="A">
-                <label class="form-check-label" for="option101a">A) Да </label>
+                <label class="form-check-label" for="option101a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q101}" id="option101b" value="B">
-                <label class="form-check-label" for="option101b">B) Нет</label>
+                <label class="form-check-label" for="option101b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 102. Быстро ли вы устаёте от общения с людьми? </p>
+            <p> 102. Сіз адамдармен қарым-қатынастан тез шаршайсыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q102}" id="option102a" value="A">
-                <label class="form-check-label" for="option102a">A) Да, это утомительно </label>
+                <label class="form-check-label" for="option102a">A) Иə, бұл шаршатады </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q102}" id="option102b" value="B">
-                <label class="form-check-label" for="option102b">B) Нет, я могу общаться очень долго </label>
+                <label class="form-check-label" for="option102b">B) Жоқ, мен өте ұзақ сөйлесе аламын </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 103. Нравится ли Вам читать об археологических находках? </p>
+            <p> 103. Археологиялық олжалар туралы оқығанды ұнатасыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q103}" id="option103a" value="A">
-                <label class="form-check-label" for="option103a">A) Да, мне это интересно </label>
+                <label class="form-check-label" for="option103a">A) Иə, бұл маған қызықты </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q103}" id="option103b" value="B">
-                <label class="form-check-label" for="option103b">B) Нет, меня не интересует эта тема </label>
+                <label class="form-check-label" for="option103b">B) Жоқ, мені бұл тақырып қызықтырмайды </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 104. Вы увлеченно смотрите исторические фильмы, читаете исторические книги? </p>
+            <p> 104. Сіз тарихи фильмдерді көруге, тарихи кітаптарды оқуға құмарсыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q104}" id="option104a" value="A">
-                <label class="form-check-label" for="option104a">A) Да </label>
+                <label class="form-check-label" for="option104a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q104}" id="option104b" value="B">
-                <label class="form-check-label" for="option104b">B) Нет</label>
+                <label class="form-check-label" for="option104b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 105. Если  мне нужно выполнить сложное, незнакомое задание, то предпочитаю сделать его вместе с кем-нибудь, чем трудиться над ним в одиночку </p>
+            <p> 105. Егер маған қиын, бейтаныс тапсырманы орындау керек болса, онда мен оны жалғыз жұмыс істегеннен гөрі оны біреумен бірге жасағанды жөн көремін. </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q105}" id="option105a" value="A">
-                <label class="form-check-label" for="option105a">A) Да </label>
+                <label class="form-check-label" for="option105a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q105}" id="option105b" value="B">
-                <label class="form-check-label" for="option105b">B) Нет</label>
+                <label class="form-check-label" for="option105b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 106. Вдохновляют ли вас чьи-то рассказы об успехе? </p>
+            <p> 106. Біреудің сəттілік туралы əңгімелері сізді шабыттандырады ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q106}" id="option106a" value="A">
-                <label class="form-check-label" for="option106a">A) Да </label>
+                <label class="form-check-label" for="option106a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q106}" id="option106b" value="B">
-                <label class="form-check-label" for="option106b">B) Нет</label>
+                <label class="form-check-label" for="option106b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 107. Доставляет ли вам удовольствие красивое и логичное решение математической задачи? </p>
+            <p> 107. Математикалық есептің əдемі жəне логикалық шешім шыққаны Сізге ұнай ма? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q107}" id="option107a" value="A">
-                <label class="form-check-label" for="option107a">A) Да </label>
+                <label class="form-check-label" for="option107a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q107}" id="option107b" value="B">
-                <label class="form-check-label" for="option107b">B) Нет</label>
+                <label class="form-check-label" for="option107b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 108. Раздел биологии, изучающий строение тканей живых организмов </p>
+            <p> 108. Тірі организмдер тіндерінің құрылымын зерттейтін биология бөлімі. </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q108}" id="option108a" value="A">
                 <label class="form-check-label" for="option108a">A) Гистология </label>
@@ -1417,22 +1417,22 @@
         </div>
 
         <div class="form-check">
-            <p> 109. Вы участвовали в олимпиадах по истории, обществознанию, литературе или русскому/казахскому языку? </p>
+            <p> 109. Сіз тарих, қоғамтану, əдебиет немесе орыс/қазақ тілі бойынша олимпиадаларға қатысқансыз ба? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q109}" id="option109a" value="A">
-                <label class="form-check-label" for="option109a">A) Да </label>
+                <label class="form-check-label" for="option109a">A) Иә </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q109}" id="option109b" value="B">
-                <label class="form-check-label" for="option109b">B) Нет</label>
+                <label class="form-check-label" for="option109b">B) Жоқ </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 110. Если бы Вам предложили бесплатные курсы, на какой бы Вы записались? </p>
+            <p> 110. Егер Сізге тегін курстар ұсынылса, қайсысына жазылар едіңіз? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q110}" id="option110a" value="A">
-                <label class="form-check-label" for="option110a">A) Программирование </label>
+                <label class="form-check-label" for="option110a">A) Бағдарламалау </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q110}" id="option110b" value="B">
@@ -1440,11 +1440,11 @@
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q110}" id="option110c" value="V">
-                <label class="form-check-label" for="option110c">C) Первая медицинская помощь </label>
+                <label class="form-check-label" for="option110c">C) Алғашқы медициналық көмек </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q110}" id="option110d" value="G">
-                <label class="form-check-label" for="option110d">D) Спортивный тренер </label>
+                <label class="form-check-label" for="option110d">D) Спорт жаттықтырушысы </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q110}" id="option110e" value="D">
@@ -1452,187 +1452,187 @@
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q110}" id="option110f" value="E">
-                <label class="form-check-label" for="option110f">F) Дизайн интерьеров </label>
+                <label class="form-check-label" for="option110f">F) Интерьер дизайны </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q110}" id="option110g" value="J">
-                <label class="form-check-label" for="option110g">G) Иностранный язык </label>
+                <label class="form-check-label" for="option110g">G) Шет тілі </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 111. Какую выставку Вы бы с удовольствием посетили? </p>
+            <p> 111. Сіз қандай көрмеге қуана барар едіңіз? </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q111}" id="option111a" value="A">
-                <label class="form-check-label" for="option111a">A) Новинок технической аппаратуры </label>
+                <label class="form-check-label" for="option111a">A) Жаңа техникалық жабдықтар </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q111}" id="option111b" value="B">
-                <label class="form-check-label" for="option111b">B) Картин и скульптур</label>
+                <label class="form-check-label" for="option111b">B) Суреттер мен мүсіндер </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q111}" id="option111c" value="V">
-                <label class="form-check-label" for="option111c">C) Историческая выставка</label>
+                <label class="form-check-label" for="option111c">C) Тарихи көрме </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 112. У меня больше всего проявляются способности в области: </p>
+            <p> 112. Менде бұл салада ең көп қабілеттер бар: </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q112}" id="option112a" value="A">
-                <label class="form-check-label" for="option112a">A) Рисования, прикладного творчества </label>
+                <label class="form-check-label" for="option112a">A) Сурет салу, қолданбалы шығармашылық </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q112}" id="option112b" value="B">
-                <label class="form-check-label" for="option112b">B) Точных наук (математика, физика и т.д.) </label>
+                <label class="form-check-label" for="option112b">B) Нақты ғылымдар (математика, физика жəне т.б.) </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q112}" id="option112c" value="V">
-                <label class="form-check-label" for="option112c">C) Изучения языков, литературы, словесного творчества</label>
+                <label class="form-check-label" for="option112c">C) Тілдерді, əдебиетті, ауызша шығармашылықты зерттеу </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 113. Я лучше воспринимаю и запоминаю информацию: </p>
+            <p> 113. Мен ақпаратты жақсы қабылдаймын жəне есте сақтаймын: </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q113}" id="option113a" value="A">
-                <label class="form-check-label" for="option113a">A) На слух </label>
+                <label class="form-check-label" for="option113a">A) Құлақ арқылы </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q113}" id="option113b" value="B">
-                <label class="form-check-label" for="option113b">B) С помощью схем и чертежей </label>
+                <label class="form-check-label" for="option113b">B) Схемалар мен сызбаларды қолдану арқылы </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q113}" id="option113c" value="V">
-                <label class="form-check-label" for="option113c">C) Чтобы лучше запомнить, мне нужно понять логику, разобраться </label>
+                <label class="form-check-label" for="option113c">C) Жақсы есте сақтау үшін маған логиканы түсініп, басын ашып алуым керек </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 114.  Для меня проще: </p>
+            <p> 114. Мен үшін оңайырақ: </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q114}" id="option114a" value="A">
-                <label class="form-check-label" for="option114a">A) Разобраться, как работает незнакомая компьютерная программа </label>
+                <label class="form-check-label" for="option114a">A) Бейтаныс компьютерлік бағдарламаның қалай жұмыс істейтінін анықтау </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q114}" id="option114b" value="B">
-                <label class="form-check-label" for="option114b">B) Написать текст или документ</label>
+                <label class="form-check-label" for="option114b">B) Мəтін немесе құжат жазу </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q114}" id="option114c" value="V">
-                <label class="form-check-label" for="option114c">C) Составить бюджет или финансовый отчет </label>
+                <label class="form-check-label" for="option114c">C) Бюджет немесе қаржылық есеп жасау </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q114}" id="option114d" value="G">
-                <label class="form-check-label" for="option114d">D) Сделать что-то своими руками (нарисовать, сшить, смастерить) </label>
+                <label class="form-check-label" for="option114d">D) Өз қолыңызбен бірдеңе жасау (сурет салу, тігу, бір затты ойлап табу) </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 115. Я в большей степени интересуюсь: </p>
+            <p> 115. Мені көбірек қызықтырады: </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q115}" id="option115a" value="A">
-                <label class="form-check-label" for="option115a">A) Всем, что связано с компьютерами </label>
+                <label class="form-check-label" for="option115a">A) Компьютерлермен байланысты барлық нəрсе </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q115}" id="option115b" value="B">
-                <label class="form-check-label" for="option115b">B) Рекламой, маркетингом, бизнесом</label>
+                <label class="form-check-label" for="option115b">B) Жарнама, маркетинг, бизнес </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q115}" id="option115c" value="V">
-                <label class="form-check-label" for="option115c">C) Творчеством, искусством</label>
+                <label class="form-check-label" for="option115c">C) Шығармашылық, өнер </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q115}" id="option115d" value="G">
-                <label class="form-check-label" for="option115d">D) Вопросами лидерства и управления людьми, психологией </label>
+                <label class="form-check-label" for="option115d">D) Көшбасшылық жəне адамдарды басқару мəселелері, психология </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 116. Мне более комфортно в деятельности, где можно: </p>
+            <p> 116. Маған осы қызметте ыңғайлы болар еді: </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q116}" id="option116a" value="A">
-                <label class="form-check-label" for="option116a">A) Концентрироваться на одном деле, не отвлекаясь </label>
+                <label class="form-check-label" for="option116a">A) Алаңдамай, бір іске шоғырлану </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q116}" id="option116b" value="B">
-                <label class="form-check-label" for="option116b">B) Переключаться на разные задачи, чтобы не заскучать </label>
+                <label class="form-check-label" for="option116b">B) Жалықпау үшін əртүрлі тапсырмаларға ауысу </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q116}" id="option116c" value="V">
-                <label class="form-check-label" for="option116c">C) Делать несколько дел одновременно </label>
+                <label class="form-check-label" for="option116c">C) Бір уақытта бірнеше нəрсе жасау </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 117. У меня лучше получается: </p>
+            <p> 117. Менің қолымнан осы іс жақсы келеді: </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q117}" id="option117a" value="A">
-                <label class="form-check-label" for="option117a">A) Анализировать факты, оценивать что-либо </label>
+                <label class="form-check-label" for="option117a">A) Фактілерді талдау, бір нəрсені бағалау </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q117}" id="option117b" value="B">
-                <label class="form-check-label" for="option117b">B) Делать из хаоса порядок </label>
+                <label class="form-check-label" for="option117b">B) Хаостан тəртіп жасау </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q117}" id="option117c" value="V">
-                <label class="form-check-label" for="option117c">C) Придумывать что-то новое, создавать с "нуля" </label>
+                <label class="form-check-label" for="option117c">C) Жаңа нəрсе ойлап табу, «нөлден» бастап жасау </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q117}" id="option117d" value="G">
-                <label class="form-check-label" for="option117d">D) Понимать потребности людей и мотивы их поведения </label>
+                <label class="form-check-label" for="option117d">D) Адамдардың қажеттіліктерін жəне олардың мінез құлқының себептерін түсіну </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 118.  Мне комфортнее работать: </p>
+            <p> 118.  Маған жұмыс істеу ыңғайлы: </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q118}" id="option118a" value="A">
-                <label class="form-check-label" for="option118a">A) Когда я сам ставлю себе задачи и планирую работу </label>
+                <label class="form-check-label" for="option118a">A) Мен өзіме тапсырмалар қойып жұмысты жоспарлаған кезде </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q118}" id="option118b" value="B">
-                <label class="form-check-label" for="option118b">B) На "драйве", увлеченности и вдохновении </label>
+                <label class="form-check-label" for="option118b">B) «Драйвта», хоббиде жəне шабытпен болған кезде </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q118}" id="option118c" value="V">
-                <label class="form-check-label" for="option118c">C) Когда мне дают конкретную задачу и адекватный план </label>
+                <label class="form-check-label" for="option118c">C) Маған нақты тапсырма мен барабар жоспар берілген кезде </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 119. Я, в большей степени: </p>
+            <p> 119. Мен көп дəрежеде: </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q119}" id="option119a" value="A">
-                <label class="form-check-label" for="option119a">A) "Естественник" (биология, медицина) </label>
+                <label class="form-check-label" for="option119a">A) «Табиғи» сала бойынша (биология, медицина) </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q119}" id="option119b" value="B">
-                <label class="form-check-label" for="option119b">B) "Технарь"</label>
+                <label class="form-check-label" for="option119b">B) «Техник» </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q119}" id="option119c" value="V">
-                <label class="form-check-label" for="option119c">C) "Гуманитарий"</label>
+                <label class="form-check-label" for="option119c">C) «Гуманитарлық» сала бойынша </label>
             </div>
         </div>
 
         <div class="form-check">
-            <p> 120. Мне бы хотелось, чтобы моя профессиональная деятельность была связана: </p>
+            <p> 120. Менің кəсіби қызметім байланысты болғанын қалаймын: </p>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q120}" id="option120a" value="A">
-                <label class="form-check-label" for="option120a">A) С общением с разными людьми </label>
+                <label class="form-check-label" for="option120a">A) Əр түрлі адамдармен қарым-қатынас жасаумен </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q120}" id="option120b" value="B">
-                <label class="form-check-label" for="option120b">B) С творческой деятельностью (писать сценарии, книги, рисование, снимать фильмы и т.д.) </label>
+                <label class="form-check-label" for="option120b">B) Шығармашылық қызметпен (сценарийлер, кітаптар, сурет салу, фильмдер түсіру жəне т.б.) </label>
             </div>
             <div class="options">
                 <input class="form-check-input" type="radio" th:field="*{q120}" id="option120c" value="V">
-                <label class="form-check-label" for="option120c">C) С расчетами и ведением документации</label>
+                <label class="form-check-label" for="option120c">C) Есеп айырысулармен жəне құжаттаманы жүргізумен </label>
             </div>
         </div>
-            <button id="myButton" class="btn btn-lg btn-primary btn-block" type="submit">Закончить тест</button>
-        </form>
+        <button id="myButton" class="btn btn-lg btn-primary btn-block" type="submit">Тестті аяқтау</button>
+    </form>
 
 </div>
 <script type="text/javascript">
@@ -1642,4 +1642,3 @@
 </script>
 </body>
 </html>
-

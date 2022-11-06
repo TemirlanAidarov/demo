@@ -60,5 +60,40 @@ body
     color: white;
     font-family: Montserrat,Helvetica Neue,Arial,sans-serif;
 }
+@media (max-width: 800px)
+{
+    .box
+    {
+        width:100%;
+        top: 0%;
+        left: 0%;
+        margin: 0 auto;
+        position: absolute;
+    }
+    .box h1
+    {
+        letter-spacing: 0em;
+    }
+    .box p
+    {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 25px;
+
+        padding: 10px 0;
+        font-size: 16px;
+        line-height: 150%;
+
+    }
+    .form-control{
+        width: 95%;
+    }
+    .header {
+        padding-right: 10px;
+        padding-left: 10px;
+        text-align: center;
+        font-size: 30px;
+    }
+}
 
 

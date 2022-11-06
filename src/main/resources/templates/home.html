@@ -14,7 +14,7 @@
     <div class="group">
         <ul class="navigation">
             <li><a href="home">Главная страница</a></li>
-            <li><a href="myAccount">Мой аккаунт</a></li>
+            <li><a href="resultsDebugQaz">Мой результаты</a></li>
             <li><a href="logout">Выйти</a></li>
         </ul>
         <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
@@ -26,7 +26,7 @@
         <h2>Профориентационный Тест</h2>
     </div>
     <div class = "buttonOftest">
-        <a href="instructions1" class="btn">Начать тестирование</a>
+        <a href="/languageChoose" class="btn" id="btn">Начать тестирование</a>
     </div>
 </div>
 
@@ -37,16 +37,16 @@
 </svg>
 <div class = "bodybox">
     <div class="divIllus">
-        <img class="illustration1" src="/css/images/undraw_predictive_analytics_re_wxt8.svg">
-        <img class="illustration1" src="/css/images/undraw_developer_activity_re_39tg.svg">
-        <img class="illustration1" src="/css/images/undraw_mathematics_-4-otb.svg">
-        <img class="illustration1" src="/css/images/undraw_certificate_re_yadi.svg">
+        <img id="img1" class="illustration1" src="/css/images/undraw_predictive_analytics_re_wxt8.svg">
+        <img id="img2" class="illustration1" src="/css/images/undraw_developer_activity_re_39tg.svg">
+        <img id="img3" class="illustration1" src="/css/images/undraw_mathematics_-4-otb.svg">
+        <img id="img4" class="illustration1" src="/css/images/undraw_certificate_re_yadi.svg">
     </div>
 </div>
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script>
+<script th:inline="javascript">
     let navigation = document.querySelector('.navigation');
     let menuToggle = document.querySelector('.menuToggle');
     let header = document.querySelector('header');
@@ -56,6 +56,16 @@
         header.classList.toggle('open');
         container.classList.toggle('hide');
 
+    }
+
+    /*<![CDATA[*/
+    let physMat= /*[[${answersResults.physMat}]]*/ 'physMat';
+    /*]]>*/
+
+    if (physMat > 10){
+        document.getElementById("btn").href = "#";
+        document.getElementById("btn").innerHTML = "Тест пройден"
+        document.getElementById("btn").style.background = "green";
     }
 </script>
 </body>

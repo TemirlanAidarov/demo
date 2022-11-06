@@ -17,52 +17,52 @@
 <body cz-shortcut-listen="true">
 <div class="box" >
   <div class="header">
-    <h2>Анкета</h2>
+    <h2>Сауалнама</h2>
   </div>
-  <form method="POST" th:action="@{/survey}" th:object="${surveyRequest}" class="form-group">
+  <form method="POST" th:action="@{/surveyQaz}" th:object="${surveyRequest}" class="form-group">
     <br>
 
     <div class="form-check">
-      <label>1. Какое направление вам больше всего нравится</label>
+      <label>1. Сізге қай бағыт көбірек ұнайды:</label>
       <br>
       <select th:field="*{surveyPath}" id="surveyPath" name="surveyPath">
-        <option th:value="physmat">физико-математический</option>
-        <option th:value="chembio">химико-биологический</option>
-        <option th:value="it">информационно-технологический</option>
-        <option th:value="soc">социально-экономический</option>
-        <option th:value="hum">гуманитарный</option>
-        <option th:value="ling">лингвистический</option>
-        <option th:value="art">художественно-эстетический</option>
+        <option th:value="physmat">физико-математика</option>
+        <option th:value="chembio">химико-биология</option>
+        <option th:value="it">информационно-технологиялар</option>
+        <option th:value="soc">социально-экономика</option>
+        <option th:value="hum">гуманитарлық</option>
+        <option th:value="ling">лингвистикалық</option>
+        <option th:value="art">көркемдік және эстетикалық</option>
       </select>
     </div>
 
     <br>
     <div class="form-check">
-      <label>2. Почему вы выбрали данное направление:</label>
+      <label>2. Неліктен бұл бағытты таңдадыңыз?:</label>
       <textarea class="form-control" th:field="*{surveyFactor}" id="surveyFactor" rows="3"></textarea>
     </div>
     <br>
     <div class="form-check">
-      <label>3. Какой предмет больше нравится</label>
+      <label>3. Сізге қай пән көбірек ұнайды:</label>
       <textarea class="form-control" th:field="*{surveySubject}" id="surveySubject" rows="3"></textarea>
     </div>
     <br>
     <div class="form-check">
-      <label>4. В какой стране вы бы хотели обучаться</label>
+      <label>4. Мектептен кейін Қай елде оқығыңыз келеді</label>
       <textarea class="form-control" th:field="*{surveyCountry}" id="surveyCountry" rows="3"></textarea>
     </div>
     <br>
     <div class="form-check">
-      <label>5. Желаете ли вы обучаться на бесплатной основе (Грант)</label>
+      <label>5. Сіз тегін оқығыңыз келе ме (Грант)</label>
       <textarea class="form-control" th:field="*{surveyScholar}" id="surveyScholar" rows="3"></textarea>
     </div>
     <br>
     <div class="form-check">
-      <label>6. Как вы готовитесь на ЕНТ</label>
+      <label>6. ҰБТ-ға қалай дайындаласыз</label>
       <textarea class="form-control" th:field="*{surveyENT}" id="surveyENT" rows="3"></textarea>
     </div>
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Завершить анкетирование</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Сауалнаманы аяқтау</button>
   </form>
 
 </div>
