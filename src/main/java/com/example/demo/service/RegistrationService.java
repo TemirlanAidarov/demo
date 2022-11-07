@@ -5,14 +5,19 @@ import com.example.demo.model.ResetRequest;
 import com.example.demo.security.EmailValidator;
 import com.example.demo.security.AppUserRole;
 import com.example.demo.model.RegistrationRequest;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
 public class RegistrationService {
+
     private final AppUserService appUserService;
     private final EmailValidator emailValidator;
+
+    public RegistrationService(AppUserService appUserService,
+                               EmailValidator emailValidator) {
+        this.appUserService = appUserService;
+        this.emailValidator = emailValidator;
+    }
 
     //private final ConfirmationTokenService confirmationTokenService;
     public void register(RegistrationRequest request) {

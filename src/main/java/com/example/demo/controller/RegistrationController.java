@@ -1,23 +1,25 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.RegistrationRequest;
 import com.example.demo.model.ResetRequest;
 import com.example.demo.service.RegistrationService;
-import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import com.example.demo.model.RegistrationRequest;
 
-//@RestController
 @Controller
-//@RequestMapping(path = "/registration")
-@AllArgsConstructor
 public class RegistrationController {
-    private RegistrationService registrationService;
 
-    //private static final Logger log = LoggerFactory.getLogger(RegistrationController.class);
+    private final RegistrationService registrationService;
+    private static final Logger log = LoggerFactory.getLogger(RegistrationController.class);
+
+    public RegistrationController(RegistrationService registrationService) {
+        this.registrationService = registrationService;
+    }
 
     @GetMapping("/registration")
     public String getRegistrationView(@ModelAttribute RegistrationRequest registrationRequest, Model model) {
@@ -42,6 +44,7 @@ public class RegistrationController {
         System.out.println("Inside goResetPage");
         return "resetPassword";
     }
+
     @PostMapping("/resetPassword")
     public String postResetPage(@ModelAttribute("resetRequest") ResetRequest resetRequest) {
         System.out.println("Inside ResetRequest");

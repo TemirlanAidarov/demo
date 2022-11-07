@@ -1,37 +1,50 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.AppUser;
 import com.example.demo.entity.SurveyAnswers;
+import com.example.demo.entity.UserAnswers;
 import com.example.demo.entity.UserAnswersResult;
 import com.example.demo.repo.AppUserRepo;
 import com.example.demo.repo.SurveyAnswersRepo;
 import com.example.demo.repo.UserAnswersRepo;
 import com.example.demo.repo.UserAnswersResultRepo;
-import com.example.demo.entity.AppUser;
-import com.example.demo.entity.UserAnswers;
 import com.example.demo.security.EmailSenderService;
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 import java.util.UUID;
 
 @Service
-@AllArgsConstructor
 public class AppUserService implements UserDetailsService {
-    @Autowired
-    private EmailSenderService emailSenderService;
-    private final static String EMAIL_NOT_FOUND_MSG =
-            "user with email %s not found";
 
-    private final static String IIN_NOT_FOUND_MSG =
-            "user with IIN %s not found";
+
+    private final static String EMAIL_NOT_FOUND_MSG = "user with email %s not found";
+    private final static String IIN_NOT_FOUND_MSG = "user with IIN %s not found";
+    private final EmailSenderService emailSenderService;
     private final AppUserRepo appUserRepo;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final UserAnswersRepo userAnswersRepo;
+    private final UserAnswersResultRepo userAnswersResultRepo;
+    private final SurveyAnswersRepo surveyAnswersRepo;
+
+    public AppUserService(EmailSenderService emailSenderService,
+                          AppUserRepo appUserRepo,
+                          BCryptPasswordEncoder bCryptPasswordEncoder,
+                          UserAnswersRepo userAnswersRepo,
+                          UserAnswersResultRepo userAnswersResultRepo,
+                          SurveyAnswersRepo surveyAnswersRepo) {
+        this.emailSenderService = emailSenderService;
+        this.appUserRepo = appUserRepo;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.userAnswersRepo = userAnswersRepo;
+        this.userAnswersResultRepo = userAnswersResultRepo;
+        this.surveyAnswersRepo = surveyAnswersRepo;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String email)
@@ -67,7 +80,7 @@ public class AppUserService implements UserDetailsService {
         }
         return true;
     }*/
-
+    @Transactional
     public void signUpUser(AppUser appUser) {
         boolean userExists = appUserRepo
                 .findByEmail(appUser.getEmail())
@@ -117,13 +130,11 @@ public class AppUserService implements UserDetailsService {
         //return token;
     }
 
-    private final UserAnswersRepo userAnswersRepo;
-    private final UserAnswersResultRepo userAnswersResultRepo;
 
     public void saveUserAnswers(UserAnswers userAnswers) {
         String curUser = userAnswers.getCurrentUsername();
         UserAnswers toSave = userAnswersRepo.findByCurrentUsername(curUser);
-        if(toSave!=null){
+        if (toSave != null) {
             toSave.setQ1(userAnswers.getQ1());
             toSave.setQ2(userAnswers.getQ2());
             toSave.setQ3(userAnswers.getQ3());
@@ -139,17 +150,17 @@ public class AppUserService implements UserDetailsService {
 
             System.out.println("IT EXISTS!!!");
             userAnswersRepo.save(toSave);
-        }
-        else{
+        } else {
             System.out.println("IT DOESN'T EXISTS!!!");
             userAnswersRepo.save(userAnswers);
         }
     }
-    private final SurveyAnswersRepo surveyAnswersRepo;
+
+    @Transactional
     public void saveSurveyAnswers(SurveyAnswers surveyAnswers) {
         String curUser = surveyAnswers.getCurrentUsername();
         SurveyAnswers toSave = surveyAnswersRepo.findByCurrentUsername(curUser);
-        if(toSave!=null){
+        if (toSave != null) {
             toSave.setSurveyCountry(surveyAnswers.getSurveyCountry());
             toSave.setSurveyENT(surveyAnswers.getSurveyENT());
             toSave.setSurveyFactor(surveyAnswers.getSurveyFactor());
@@ -159,16 +170,17 @@ public class AppUserService implements UserDetailsService {
 
             System.out.println("IT EXISTS!!!");
             surveyAnswersRepo.save(toSave);
-        }
-        else{
+        } else {
             System.out.println("IT DOESN'T EXISTS!!!");
             surveyAnswersRepo.save(surveyAnswers);
         }
     }
+
+    @Transactional
     public void saveUserResultsAnswers(UserAnswersResult userAnswersResult) {
         String curUser = userAnswersResult.getCurrentUsername();
         UserAnswersResult toSave = userAnswersResultRepo.findByCurrentUsername(curUser);
-        if(toSave!=null){
+        if (toSave != null) {
             toSave.setPhysMat(userAnswersResult.getPhysMat());
             toSave.setChemBio(userAnswersResult.getChemBio());
             toSave.setLing(userAnswersResult.getLing());
@@ -180,13 +192,13 @@ public class AppUserService implements UserDetailsService {
             toSave.setEcon(userAnswersResult.getEcon());
             toSave.setSoc(userAnswersResult.getSoc());
             toSave.setService(userAnswersResult.getService());
-        }
-        else{
+        } else {
             System.out.println("IT DOESN'T EXISTS!!!");
             userAnswersResultRepo.save(userAnswersResult);
         }
     }
 
+    @Transactional
     public void sendResetEmail(String email) {
         boolean userExists = appUserRepo
                 .findByEmail(email)
@@ -211,8 +223,7 @@ public class AppUserService implements UserDetailsService {
             emailSenderService.sendEmail(email,
                     "Ваш восстановленный пароль для входа",
                     passwordNew);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e);
         }
 
