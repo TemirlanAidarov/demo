@@ -14,6 +14,7 @@
       margin-bottom: 20px;
     }
     .myForm{
+      background-color: white;
       width: 300px;
       border: none;
       border-radius: 4px;
@@ -25,67 +26,155 @@
 <div class="container" >
   <form method="POST" th:action="@{/registration}" th:object="${registrationRequest}" class="form-signin">
     <h2 class="form-signin-heading">Введите свои данные для регистрации</h2>
+    <p>Имя:</p>
     <p>
       <label class="sr-only">firstName</label>
       <input type="text" name="firstName" class="form-control" th:value="*{firstName}" placeholder="Имя" required="Ввдетите свое имя" autofocus="">
     </p>
+    <p>Фамилия:</p>
     <p>
       <label class="sr-only">lastName</label>
       <input type="text" name="lastName" class="form-control" th:value="*{lastName}" placeholder="Фамилия" required="Ввдетите свою фамилию">
     </p>
+    <p>Отчество:</p>
     <p>
       <label class="sr-only">middlename</label>
       <input type="text" name="middlename" th:value="*{middlename}" class="form-control" placeholder="Отчество">
     </p>
+    <p>Укажите свой электронный адрес:</p>
     <p>
-      <label class="sr-only">email</label>
+    <label class="sr-only">email</label>
       <input type="email" name="email" th:value="*{email}" class="form-control" placeholder="Эмайл" required="Введите свой эмайл">
     </p>
+    <p>Укажите свой ИИН:</p>
     <p>
-      <label class="sr-only">IIN</label>
+    <label class="sr-only">IIN</label>
       <input type="number" name="IIN" th:value="*{IIN}" class="form-control" placeholder="ИИН" required="">
     </p>
+    <p>Укажите свою дату рождения:</p>
     <p>
-      <label class="sr-only">birthdate</label>
+    <label class="sr-only">birthdate</label>
       <input type="date" name="birthdate" th:value="*{birthdate}" class="form-control" placeholder="Введите свою дату рождения" required="Введите свою дату рождения">
     </p>
     <div class="Myform">
+      <p>Укажите свой пол:</p>
       <select class="myForm" th:field="*{gender}" id="gender" name="gender">
         <option th:value="false">Мужской</option>
         <option th:value="true">Женский</option>
       </select>
     </div>
-    <p>
-      <label class="sr-only">region</label>
-      <input type="text" name="region" th:value="*{region}" class="form-control" placeholder="Область" required="Область">
-    </p>
-    <p>
-      <label class="sr-only">city</label>
-      <input type="text" name="city" th:value="*{city}" class="form-control" placeholder="Город" required="Город">
-    </p>
-    <p>
-      <label class="sr-only">address</label>
-      <input type="text" name="address" th:value="*{address}" class="form-control" placeholder="Район" required="Район">
-    </p>
-    <p>
-      <label class="sr-only">school</label>
-      <input type="number" name="school" th:value="*{school}" class="form-control" placeholder="Школа" required="Школа">
-    </p>
-    <p>
-      <label class="sr-only">grade</label>
-      <input type="number" name="grade" th:value="*{grade}" class="form-control" placeholder="Класс" required="Класс">
-    </p>
-
+    <div class="Myform">
+      <p>Выберите свою школу:</p>
+      <select class="myForm" th:field="*{school}" id="school" name="school">#
+        <option th:value="1">#1</option>
+        <option th:value="2">#2</option>
+        <option th:value="3">#3</option>
+        <option th:value="4">#4</option>
+        <option th:value="5">#5</option>
+        <option th:value="6">#6</option>
+        <option th:value="7">#7</option>
+        <option th:value="8">#8</option>
+        <option th:value="9">#9</option>
+        <option th:value="10">#10</option>
+        <option th:value="11">#11</option>
+        <option th:value="12">#12</option>
+        <option th:value="13">#13</option>
+        <option th:value="14">#14</option>
+        <option th:value="15">#15</option>
+        <option th:value="16">#16</option>
+        <option th:value="17">#17</option>
+        <option th:value="18">#18</option>
+        <option th:value="19">#19</option>
+        <option th:value="20">#20</option>
+        <option th:value="21">#21</option>
+        <option th:value="22">#22</option>
+        <option th:value="23">#23</option>
+        <option th:value="24">#24</option>
+        <option th:value="25">#25</option>
+        <option th:value="26">#26</option>
+        <option th:value="27">#27</option>
+        <option th:value="28">#28</option>
+        <option th:value="29">#29</option>
+        <option th:value="30">#30</option>
+        <option th:value="31">#31</option>
+        <option th:value="32">#32</option>
+        <option th:value="33">#33</option>
+        <option th:value="34">#34</option>
+        <option th:value="35">#35</option>
+        <option th:value="36">#36</option>
+        <option th:value="37">#37</option>
+        <option th:value="38">#38</option>
+        <option th:value="39">#39</option>
+        <option th:value="40">#40</option>
+        <option th:value="41">#41</option>
+        <option th:value="42">#42</option>
+        <option th:value="43">#43</option>
+        <option th:value="44">#44</option>
+        <option th:value="45">#45</option>
+        <option th:value="46">#46</option>
+        <option th:value="47">#47</option>
+        <option th:value="48">#48</option>
+        <option th:value="49">#49</option>
+        <option th:value="50">#50</option>
+        <option th:value="51">#51</option>
+        <option th:value="52">#52</option>
+        <option th:value="53">#53</option>
+        <option th:value="54">#54</option>
+        <option th:value="55">#55</option>
+        <option th:value="56">#56</option>
+        <option th:value="57">#57</option>
+        <option th:value="58">#58</option>
+        <option th:value="59">#59</option>
+        <option th:value="60">#60</option>
+        <option th:value="61">#61</option>
+        <option th:value="62">#62</option>
+        <option th:value="63">#63</option>
+        <option th:value="64">#64</option>
+        <option th:value="65">#65</option>
+        <option th:value="66">#6</option>
+        <option th:value="67">#67</option>
+        <option th:value="68">#68</option>
+        <option th:value="69">#69</option>
+        <option th:value="70">#70</option>
+        <option th:value="71">#71</option>
+        <option th:value="72">#72</option>
+        <option th:value="73">#73</option>
+        <option th:value="74">#74</option>
+        <option th:value="75">#75</option>
+        <option th:value="76">#76</option>
+        <option th:value="77">#77</option>
+        <option th:value="78">#78</option>
+        <option th:value="79">#79</option>
+        <option th:value="80">#80</option>
+        <option th:value="81">#81</option>
+      </select>
+    </div>
+    <div class="Myform">
+      <p>Класс обучения:</p>
+      <select class="myForm" th:field="*{grade}" id="grade" name="grade">
+        <option th:value="1">1класс</option>
+        <option th:value="2">2класс</option>
+        <option th:value="3">3класс</option>
+        <option th:value="4">4класс</option>
+        <option th:value="5">5класс</option>
+        <option th:value="6">6класс</option>
+        <option th:value="7">7класс</option>
+        <option th:value="8">8класс</option>
+        <option th:value="9">9класс</option>
+        <option th:value="10">10класс</option>
+        <option th:value="11">11класс</option>
+        <option th:value="12">12класс</option>
+      </select>
+    </div>
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрироваться</button>
   </form>
 
 </div>
 <script type="text/javascript">
-  document.getElementById("myButton").onclick = function () {
-    location.href = "/login";
-  };
-
+    document.getElementById("myButton").onclick = function () {
+      location.href = "/login";
+    }
   $(function() {
     $("#birthdate").datepicker({dateFormat:"yy-mm-dd"});
   });

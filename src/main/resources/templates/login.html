@@ -32,14 +32,15 @@
         </p>
         <p class ="resetMessage">Забыли свой пароль? <a href="/resetPassword">Восстановить</a></p>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
-        <button id="myButton" class="btn btn-lg btn btn-success btn-block" >Зарегистрироваться</button>
+        <button id="myButton" class="btn btn-lg btn btn-success btn-block" >Зарегистрироваться1</button>
     </form>
 
 
 
 </div>
 <script type="text/javascript">
-    document.getElementById("myButton").onclick = function () {
+    document.getElementById("myButton").onclick = function (event) {
+        event.stopPropagation();
         location.href = "/registration";
     };
 </script>

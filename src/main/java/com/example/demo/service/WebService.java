@@ -470,6 +470,7 @@ public class WebService {
     public UserAnswersResult getResultMethod(String currentUserName) {
         UserAnswersResult result = userAnswersResultRepo.findByCurrentUsername(currentUserName);
         //System.out.println(result);
+
         return result;
     }
 
@@ -487,4 +488,5 @@ public class WebService {
                 )
         );
     }
+
 }

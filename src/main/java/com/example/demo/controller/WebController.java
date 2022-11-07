@@ -25,24 +25,28 @@ public class WebController {
         return "home";
     }
     @GetMapping("home")
+    public String getHome() {
+        System.out.println("Inside Home");
+        return "home";
+    }
+    /*@GetMapping("home")
     public String getHome(Model model) {
         System.out.println("Inside resultsDebugQaz");
         final String currentUserName = SecurityContextHolder.getContext().getAuthentication().getName();
-        System.out.println("currentUserName " + currentUserName);
         UserAnswersResult answersResults = webService.getResultMethod(currentUserName);
-        System.out.println(answersResults.getPhysMat());
-        model.addAttribute("answersResults", answersResults);
+        if(answersResults==null){
+            new AnswersRequest(currentUserName);
+            model.addAttribute("answersResults", new AnswersRequest(currentUserName));
+        }
+        else {
+            model.addAttribute("answersResults", answersResults);
+        }
         return "home";
-    }
+    }*/
     @GetMapping("about")
     public String getAbout() {
         System.out.println("Inside about");
         return "about";
-    }
-    @GetMapping("myAccount")
-    public String getMyAccount() {
-        System.out.println("Inside myAccount");
-        return "myAccount";
     }
     @GetMapping("languageChoose")
     public String getLanguageChoose() {

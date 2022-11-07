@@ -85,7 +85,7 @@
     let navigation = document.querySelector('.navigation');
     let menuToggle = document.querySelector('.menuToggle');
     let header = document.querySelector('header');
-
+    let languageToggle = document.querySelector('dropdown');
         /*<![CDATA[*/
         let physMat= /*[[${answersResults.physMat}]]*/ 'physMat';
         let chemBio= /*[[${answersResults.chemBio}]]*/ 'chemBio';
@@ -756,6 +756,8 @@
 
     menuToggle.onclick = function(){
         header.classList.toggle('open');
+        container.classList.toggle('hide');
+        languageToggle.classList.toggle('hide');
     }
 
 </script>
