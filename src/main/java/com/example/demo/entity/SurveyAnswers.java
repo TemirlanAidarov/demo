@@ -1,14 +1,16 @@
 package com.example.demo.entity;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @Entity
 public class SurveyAnswers {
 
@@ -50,5 +52,9 @@ public class SurveyAnswers {
         this.surveyCountry = surveyCountry;
         this.surveyScholar = surveyScholar;
         this.surveyENT = surveyENT;
+    }
+
+    public SurveyAnswers() {
+
     }
 }

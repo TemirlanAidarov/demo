@@ -1,13 +1,11 @@
 package com.example.demo.model;
 
-import lombok.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @EqualsAndHashCode
 public class SurveyRequest {
     private String currentUsername;

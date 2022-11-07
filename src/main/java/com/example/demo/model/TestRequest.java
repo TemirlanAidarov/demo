@@ -1,13 +1,14 @@
 package com.example.demo.model;
 
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @EqualsAndHashCode
 public class TestRequest {
     private String currentUsername;

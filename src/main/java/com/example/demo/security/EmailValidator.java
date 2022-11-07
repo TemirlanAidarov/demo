@@ -2,9 +2,9 @@ package com.example.demo.security;
 
 import org.springframework.stereotype.Service;
 
-import java.util.function.Predicate;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
+import java.util.function.Predicate;
 
 
 @Service

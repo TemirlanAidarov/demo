@@ -1,12 +1,13 @@
 package com.example.demo.model;
 
-import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Date;
+
 @Getter
 @Setter
-@AllArgsConstructor
 @EqualsAndHashCode
 public class RegistrationRequest {
 

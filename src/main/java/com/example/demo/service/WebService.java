@@ -1,23 +1,26 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.SurveyAnswers;
+import com.example.demo.entity.UserAnswersResult;
 import com.example.demo.model.SurveyRequest;
 import com.example.demo.model.TestRequest;
-import com.example.demo.entity.UserAnswers;
-import com.example.demo.entity.UserAnswersResult;
 import com.example.demo.repo.UserAnswersResultRepo;
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class WebService {
     private final AppUserService appUserService;
+    private final UserAnswersResultRepo userAnswersResultRepo;
+
+    public WebService(AppUserService appUserService,
+                      UserAnswersResultRepo userAnswersResultRepo) {
+        this.appUserService = appUserService;
+        this.userAnswersResultRepo = userAnswersResultRepo;
+    }
+
     public void saveQuestions(TestRequest testRequest) {
 
         /*appUserService.saveUserAnswers(
@@ -39,7 +42,7 @@ public class WebService {
         );*/
     }
 
-    public void evaluateAnswers(TestRequest testRequest){
+    public void evaluateAnswers(TestRequest testRequest) {
         HashMap<String, String> KeyMap = new HashMap<>();
 
         KeyMap.put("5A", "Физико-математическое направление");
@@ -288,12 +291,12 @@ public class WebService {
         for (int number = 0; number < AnswersStorage.size(); number++) {
             String toConcat = String.valueOf(AnswersStorage.get(number));
             System.out.println("toConcat: " + toConcat);
-            String stringToUse = ((number+1) + "" + toConcat);
+            String stringToUse = ((number + 1) + "" + toConcat);
             System.out.println(stringToUse);
 
             String subject = KeyMap.get(stringToUse);
             System.out.println(subject);
-            if(subject == null) continue;
+            if (subject == null) continue;
 
             switch (subject) {
                 case "Физико-математическое направление" -> {
@@ -373,24 +376,24 @@ public class WebService {
             //System.out.println("end");
         }
 
-        System.out.println("Физико-математическое направление: "+physMat);
-        System.out.println("Химико-биологическое направление: "+chemBio);
-        System.out.println("Лингвистическое направление: "+ling);
-        System.out.println("Техническое направление: "+ tech);
-        System.out.println("Информационные технологии: "+it);
-        System.out.println("Спортивное направление и военное дело: "+sport);
-        System.out.println("Художественно-эстетическое направление: "+art);
-        System.out.println("Экономика и маркетинг: "+econ);
-        System.out.println("Психолого-педагогическое направление: "+psych);
-        System.out.println("Социально-историческое направление: "+soc);
-        System.out.println("Сфера услуг и производство: "+service);
-        System.out.println("Лидерство: "+leader);
-        System.out.println("Логика: "+logic);
-        System.out.println("Креативность: "+creativity);
-        System.out.println("Организованность: "+organized);
-        System.out.println("Социальный интеллект: "+socialInt);
-        System.out.println("Мотивация избегания неудач: "+antiMotiv);
-        System.out.println("Мотивация достижения успеха: "+motiv);
+        System.out.println("Физико-математическое направление: " + physMat);
+        System.out.println("Химико-биологическое направление: " + chemBio);
+        System.out.println("Лингвистическое направление: " + ling);
+        System.out.println("Техническое направление: " + tech);
+        System.out.println("Информационные технологии: " + it);
+        System.out.println("Спортивное направление и военное дело: " + sport);
+        System.out.println("Художественно-эстетическое направление: " + art);
+        System.out.println("Экономика и маркетинг: " + econ);
+        System.out.println("Психолого-педагогическое направление: " + psych);
+        System.out.println("Социально-историческое направление: " + soc);
+        System.out.println("Сфера услуг и производство: " + service);
+        System.out.println("Лидерство: " + leader);
+        System.out.println("Логика: " + logic);
+        System.out.println("Креативность: " + creativity);
+        System.out.println("Организованность: " + organized);
+        System.out.println("Социальный интеллект: " + socialInt);
+        System.out.println("Мотивация избегания неудач: " + antiMotiv);
+        System.out.println("Мотивация достижения успеха: " + motiv);
 
 
         int physMatPer = calculatePercentage(physMat, 14);
@@ -414,46 +417,46 @@ public class WebService {
         int motivPer = calculatePercentage(motiv, 3);
 
 
-        System.out.println("Физико-математическое направление: "+physMatPer);
-        System.out.println("Химико-биологическое направление: "+chemBioPer);
-        System.out.println("Лингвистическое направление: "+lingPer);
-        System.out.println("Техническое направление: "+ techPer);
-        System.out.println("Информационные технологии: "+itPer);
-        System.out.println("Спортивное направление и военное дело: "+sportPer);
-        System.out.println("Художественно-эстетическое направление: "+artPer);
-        System.out.println("Экономика и маркетинг: "+econPer);
-        System.out.println("Психолого-педагогическое направление: "+psychPer);
-        System.out.println("Социально-историческое направление: "+socPer);
-        System.out.println("Сфера услуг и производство: "+servicePer);
-        System.out.println("Лидерство: "+leaderPer);
-        System.out.println("Логика: "+logicPer);
-        System.out.println("Креативность: "+creativityPer);
-        System.out.println("Организованность: "+organizedPer);
-        System.out.println("Социальный интеллект: "+socialIntPer);
-        System.out.println("Мотивация избегания неудач: "+antiMotivPer);
-        System.out.println("Мотивация достижения успеха: "+motivPer);
+        System.out.println("Физико-математическое направление: " + physMatPer);
+        System.out.println("Химико-биологическое направление: " + chemBioPer);
+        System.out.println("Лингвистическое направление: " + lingPer);
+        System.out.println("Техническое направление: " + techPer);
+        System.out.println("Информационные технологии: " + itPer);
+        System.out.println("Спортивное направление и военное дело: " + sportPer);
+        System.out.println("Художественно-эстетическое направление: " + artPer);
+        System.out.println("Экономика и маркетинг: " + econPer);
+        System.out.println("Психолого-педагогическое направление: " + psychPer);
+        System.out.println("Социально-историческое направление: " + socPer);
+        System.out.println("Сфера услуг и производство: " + servicePer);
+        System.out.println("Лидерство: " + leaderPer);
+        System.out.println("Логика: " + logicPer);
+        System.out.println("Креативность: " + creativityPer);
+        System.out.println("Организованность: " + organizedPer);
+        System.out.println("Социальный интеллект: " + socialIntPer);
+        System.out.println("Мотивация избегания неудач: " + antiMotivPer);
+        System.out.println("Мотивация достижения успеха: " + motivPer);
 
         appUserService.saveUserResultsAnswers(
                 new UserAnswersResult(
-                         testRequest.getCurrentUsername(),
-                         physMatPer,
-                         chemBioPer,
-                         lingPer,
-                         techPer,
-                         itPer,
-                         sportPer,
-                         artPer,
-                         econPer,
-                         psychPer,
-                         socPer,
-                         servicePer,
-                         leaderPer,
-                         logicPer,
-                         creativityPer,
-                         organizedPer,
-                         socialIntPer,
-                         antiMotivPer,
-                         motivPer
+                        testRequest.getCurrentUsername(),
+                        physMatPer,
+                        chemBioPer,
+                        lingPer,
+                        techPer,
+                        itPer,
+                        sportPer,
+                        artPer,
+                        econPer,
+                        psychPer,
+                        socPer,
+                        servicePer,
+                        leaderPer,
+                        logicPer,
+                        creativityPer,
+                        organizedPer,
+                        socialIntPer,
+                        antiMotivPer,
+                        motivPer
                 )
         );
 
@@ -463,10 +466,10 @@ public class WebService {
         double obtainedD = Double.valueOf(obtained);
         double totalD = Double.valueOf(total);
         double percent = obtained * 100 / total;
-        return (int)percent;
+        return (int) percent;
     }
 
-    private final UserAnswersResultRepo userAnswersResultRepo;
+
     public UserAnswersResult getResultMethod(String currentUserName) {
         UserAnswersResult result = userAnswersResultRepo.findByCurrentUsername(currentUserName);
         //System.out.println(result);
