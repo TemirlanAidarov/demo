@@ -25,8 +25,6 @@ public class RegistrationController {
     public String getRegistrationView(@ModelAttribute RegistrationRequest registrationRequest, Model model) {
         model.addAttribute("registrationRequest", registrationRequest);
         System.out.println("Inside getRegistrationView");
-        //ModelAndView modelAndView = new ModelAndView();
-        //modelAndView.setViewName("registration");
         return "registration";
     }
 
@@ -35,10 +33,8 @@ public class RegistrationController {
         System.out.println("Inside register");
 
         System.out.println("registrationRequest: " + registrationRequest.toString());
-        //log.info("User has send: ", registrationRequest.toString());
         registrationService.register(registrationRequest);
 
-        //model.addAttribute("registrationRequest", registrationRequest);
         return "checkYourEmail";
     }
 
